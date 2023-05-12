@@ -1,7 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas Neue:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Secular One:wght@400&display=swap");
 
+/*  
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -24,4 +28,893 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+} */
+
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+
+:root {
+  --main-accent: #B73064;
+  --blue-accent: #212632;
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+.lato-30-blue
+{
+  font-family: 'lato';
+  color: var(--blue-accent);
+  font-size: 30px;
+  text-align: justify;
+}
+
+.lato-25-blue
+{
+  font-family: 'lato';
+  color: var(--blue-accent);
+  font-size: 25px;
+  text-align: justify;
+}
+
+.lato-20-blue
+{
+  font-family: 'lato';
+  color: var(--blue-accent);
+  font-size: 20px;
+  text-align: justify;
+}
+
+.lato-16-white
+{
+  font-family: 'lato';
+  color: white;
+  font-size: 16px;
+}
+.lato-16-blue
+{
+  font-family: 'lato';
+  color: var(--blue-accent);
+  font-size: 16px;
+  text-align: justify;
+}
+.lato-14-blue
+{
+  font-family: 'lato';
+  color: var(--blue-accent);
+  font-size: 14px;
+  text-align: justify;
+}
+
+.lato-12-blue
+{
+  font-family: 'lato';
+  color: var(--blue-accent);
+  font-size: 12px;
+  text-align: justify;
+}
+
+.lato-10-blue
+{
+  font-family: 'lato';
+  color: var(--blue-accent);
+  font-size: 10px;
+  text-align: justify;
+}
+
+.lato-10-blue1
+{
+  font-family: 'lato';
+  color: var(--blue-accent);
+  font-size: 10px;
+
+}
+
+.lato-14-white
+{
+  font-family: 'lato';
+  color: white;
+  font-size: 14px;
+  text-align: justify;
+}
+.lato-14-main
+{
+  font-family: 'lato';
+  color: var(--main-accent);
+  font-size: 14px;
+  text-align: justify;
+}
+.lato-16px-0lh
+{
+  font-family: 'lato';
+  color: white;
+  font-size: 16px;
+  line-height: 25px;
+}
+.secular-60px-70lh
+{
+  font-family: "Secular One";
+  font-size: 60px;
+  line-height: 70px;
+}
+.secular-30px-40lh
+{
+  font-family: "Secular One";
+  font-size: 30px;
+  line-height: 40px;
+}
+.secular-50px-55lh
+{
+  font-family: "Secular One";
+  font-size: 50px;
+  line-height: 55px;
+}
+.secular-40px-45lh
+{
+  font-family: "Secular One";
+  font-size: 40px;
+  line-height: 45px;
+}
+.secular-30px-35lh
+{
+  font-family: "Secular One";
+  font-size: 30px;
+  line-height: 35px;
+}
+.secular-25px-37lh-2ls
+{
+  font-family: "Secular One";
+  font-size: 25px;
+  line-height: 37px;
+  letter-spacing: 2.5px;
+  writing-mode:vertical-lr;
+  transform: rotate(180deg);
+  text-align: center;
+  color: transparent;
+  -webkit-text-stroke-width:1px;
+  -webkit-text-stroke-color: #B73064;
+}
+.secular-25px-37lh-2ls-straight
+{
+  font-family: "Secular One";
+  font-size: 25px;
+  line-height: 37px;
+  letter-spacing: 2.5px;
+  text-align: center;
+  color: transparent;
+  -webkit-text-stroke-width:1px;
+  -webkit-text-stroke-color: #B73064;
+}
+.secular-25px
+{
+  font-family: "Secular One";
+  font-size: 25px;
+  line-height: 30px;
+  text-align: left;
+}
+.secular-16px-upper
+{
+  font-family: "Secular One";
+  font-size: 16px;
+  text-transform: uppercase;
+}
+.secular-16px-upper-bold
+{
+  font-family: "Secular One";
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.secular-14px-upper
+{
+  font-family: "Secular One";
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.secular-12px-upper
+{
+  font-family: "Secular One";
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.secular-10px-upper
+{
+  font-family: "Secular One";
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+
+.bebas-90px
+{
+  font-family: "Bebas Neue";
+  font-size: 90px;
+  font-weight:600;
+  line-height: 100px;
+}
+
+.bebas-60px
+{
+  font-family: "Bebas Neue";
+  font-size: 60px;
+  font-weight:600;
+  line-height: 70px;
+}
+
+.bebas-32
+{
+  font-family: "Bebas Neue";
+  font-size: 32px;
+  font-weight:600;
+  color: #B73064;
+}
+
+.bebas-32-blue{
+  font-family: "Bebas Neue";
+  font-size: 32px;
+  font-weight:600;
+  color: var(--blue-accent);
+}
+
+.bebas-26
+{
+  font-family: "Bebas Neue";
+  font-size: 26px;
+  font-weight:600;
+  color: #B73064;
+}
+
+.fundraising{
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00000029;
+  border-radius: 8px;
+  opacity: 1;
+}
+
+
+
+.main-accent
+{
+  background-color:#B73064;
+}
+
+.main-text
+{
+  color:#212632;
+}
+
+
+
+.bigdiv{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #00000066 0% 0% no-repeat padding-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.donationrow{
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 75%;
+  background: #F4F4F4 0% 0% no-repeat padding-box;
+  justify-content: space-between;
+  padding: 1%;
+}
+
+.donationcolumn{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 85%;
+}
+
+.bigcircle{
+  width: 9rem;
+  height: 9rem;
+  border-radius: 80%;
+  border: 1px solid #B73064;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFFFFF;
+}
+
+.bigcircle img{
+  height: 50%;
+  width: 80%;
+}
+
+.progressbar{
+  height: 5px;
+  width: 85%;
+  background-color: #FFFFFF;
+}
+
+.progress{
+  height: 100%;
+  width: 55%;
+  background-color: #B73064;
+}
+
+.donationrow a{
+  color: #B73064;
+  cursor: pointer;
+}
+
+.donatebutton{
+  background: #B73064 0% 0% no-repeat padding-box;
+  white-space: nowrap;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: none;
+  padding: 1%;
+  width: 8rem;
+  height: 2.5rem;
+  opacity: 1;
+  text-align: left;
+  font: normal normal normal 16px/19px Lato;
+  letter-spacing: 0px;
+  color: #FFFFFF;
+}
+
+
+.donatebutton img{
+  margin-top: 4%;
+}
+
+.container{
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  border-radius: 21px;
+  height: auto;
+  width: 27rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container1{
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  border-radius: 21px;
+  height: 30rem;
+  width: 27rem;
+  display: flex;
+  overflow-y: scroll;
+  align-items: center;
+  justify-content: center;
+}
+
+.loginitems{
+  height: 90%;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.loginitems1{
+  height: 90%;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.loginitems a{
+  text-decoration: underline;
+  font: normal normal bold 16px/19px Lato;
+  cursor: pointer;
+}
+
+.loginitems1 a{
+  text-decoration: underline;
+  font: normal normal bold 16px/19px Lato;
+  cursor: pointer;
+}
+
+.loginitems p,.loginitems button{
+  margin-top: 10%;
+}
+
+/* .graphic {
+  width: 7rem;
+  height: 7rem;
+} */
+
+.graphic1 {
+  width: 94.51px;
+  height: 75.34px;
+}
+
+.signuprow{
+  display: flex;
+  flex-direction:row;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+}
+
+.signupcolumn{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.logincolumn{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.welcome {
+  color: #212632;
+  font: normal normal bold 25px/30px Lato;
+}
+
+
+.statement{
+
+  font: normal normal normal 16px/19px Lato;
+  letter-spacing: 0px;
+  color: #212632;
+  opacity: 1;
+  margin-bottom: 1%;
+}
+
+.heading{
+  font: normal normal bold 16px/19px Lato;
+  white-space: nowrap;
+  color: #212632;
+  opacity: 1;
+  margin-top: 0.25%;
+  align-self: flex-start;
+}
+
+.input{
+  border: 1px solid #212632;
+  border-radius: 15px;
+  opacity: 1;
+  height: 3rem;
+  width: 97%;
+  padding-left: 2%;
+  align-self: flex-start;
+}
+
+
+.input1{
+  border: 1px solid #212632;
+  border-radius: 15px;
+  width: 50%;
+}
+
+.forgor{
+  text-align: right;
+  text-decoration: underline;
+  letter-spacing: 0px;
+  color: #212632;
+  opacity: 1;
+  align-self: flex-end;
+  cursor: pointer;
+  margin-top: 0.5%;
+}
+
+.signin{
+  align-self: flex-start;
+  height: 3rem;
+  width: 99%;
+  background: #B73064 0% 0% no-repeat padding-box;
+  border-radius: 15px;
+  text-align: center;
+  font: normal normal bold 16px/19px Lato;
+  letter-spacing: 0px;
+  color: #FFFFFF;
+  opacity: 1;
+  border: 1px solid white;
+  cursor: pointer;
+  margin-top: 5%;
+}
+
+.outercircle{
+  display: flex;
+  background-color: white;
+  height: auto;
+  width: auto;
+  border-radius: 50%;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid #707070;
+}
+
+/* .nameandfigure{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+} */
+
+.innercircle{
+  height:0.8rem;
+  width: 0.8rem;
+  border-radius: 50%;
+  background-color: #B73064;
+}
+
+.semicircle{
+  margin-top: 5%;
+  height: 0.6rem;
+  width: 1rem;
+  border-radius: 50% 50% 0 0;
+  background-color: #B73064;
+}
+
+.pinkcircle{
+  background-color: #B73064;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30%;
+  width: 20%;
+  margin-left: 2%;
+  margin-top: 2%;
+}
+
+.sidebar{
+  border: 1px solid black;
+  height: 100%;
+  width: auto;
+  background: #212632 0% 0% no-repeat padding-box;
+  opacity: 1;
+}
+
+.sidebar > *{
+  margin-bottom: 10%;
+}
+
+.link{
+  text-decoration: none;
+  width: auto;
+}
+
+.line{
+  white-space: nowrap;
+  font: normal normal bold 16px/19px Lato;
+  letter-spacing: 0px;
+  color: #FFFFFF;
+  opacity: 1;
+}
+
+.button1{
+
+  height: auto;
+  width: auto;
+  border-radius: 50px;
+  opacity: 0.4;
+  cursor: pointer;
+}
+
+
+.button1:hover{
+  background: #A8B6B6 0% 0% no-repeat padding-box;
+}
+
+/* .line1{
+  text-align: left;
+  font: normal normal bold 16px/19px Lato;
+  letter-spacing: 0px;
+  color: #FFFFFF;
+  opacity: 1;
+  margin-left: 10%;
+} */
+
+.button2{
+
+  height: auto;
+  width: auto;
+  border-radius: 50px;
+  opacity: 0.4;
+  cursor: pointer;
+}
+
+.button2:hover{
+  background: #A8B6B6 0% 0% no-repeat padding-box;
+}
+
+.statsdiv{
+  margin-top: 2%;
+  height: 100%;
+  width: auto;
+}
+
+
+.donations{
+  width: auto;
+  height: auto;
+}
+
+
+
+.timesort{
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00000029;
+  border-radius: 8px;
+  opacity: 1;
+  height: 2rem;
+  margin-left: 2%;
+  width: 7rem;
+  text-align: left;
+  font: normal normal bold 12px/15px Lato;
+  letter-spacing: 0px;
+  color: #212632;
+  opacity: 1;
+  text-align: center;
+}
+
+.main{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #F8F8FA 0% 0% no-repeat padding-box;
+  display: flex;
+  flex-direction: row;
+}
+
+.totaldonation{
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00000029;
+  border-radius: 8px;
+  opacity: 1;
+  height: auto;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 2%;
+}
+
+
+
+.statheading{
+  font: normal normal bold 25px/30px Lato;
+  letter-spacing: 0px;
+  color: #212632;
+  opacity: 1;
+}
+
+.statheading2{
+  font: normal normal bold 25px/30px Lato;
+  letter-spacing: 0px;
+  color: #212632;
+  opacity: 1;
+  margin-left: 2%;
+}
+
+.actualstat{
+  font: normal normal bold 40px Bebas Neue;
+  letter-spacing: 0px;
+  color: #B73064;
+  opacity: 1;
+  margin-left: 10%;
+}
+
+.actualstat1{
+  font: normal normal bold 52px/63px Bebas Neue;
+  letter-spacing: 0px;
+  color: #212632;
+  opacity: 1;
+  margin-left: 10%;
+}
+
+.description{
+  text-align: left;
+  font: normal normal normal 18px/22px Lato;
+  letter-spacing: 0px;
+  color: #212632;
+  opacity: 1;
+  margin-left: 10%;
+}
+
+.analytics{
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00000029;
+  border-radius: 8px;
+  opacity: 1;
+  height: fit-content;
+  width: fit-content;
+  margin-left: 2%;
+  margin-top: 2%;
+}
+
+.analytics1{
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00000029;
+  border-radius: 8px;
+  opacity: 1;
+  height: 70%;
+  width: 38rem;
+  margin-left: 2%;
+  margin-top: 2%;
+}
+
+.statheading1{
+  text-align: left;
+  font: normal normal bold 16px/19px Lato;
+  letter-spacing: 0px;
+  color: #212632;
+  opacity: 1;
+  margin-left: 2%;
+}
+
+.legend{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+
+
+.check{
+  height: 70%;
+  width: 80%;
+}
+
+.schooltypes{
+  text-align: left;
+  font: normal normal normal 12px/15px Lato;
+  letter-spacing: 0px;
+  color: #212632;
+  opacity: 1;
+  margin-top: 2%;
+  margin-left: 1%;
+}
+
+.yourfundraising{
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00000029;
+  border-radius: 8px;
+  opacity: 1;
+  height: 60%;
+  width: 20%;
+}
+
+.rowdivs{
+  height: 100%;
+  width: 82%;
+  display: flex;
+  flex-direction: row;
+
+}
+
+/* 
+.fundraisingdiv{
+  display: flex;
+  flex-direction: column;
+  margin-left: 11%;
+} */
+
+
+/* 
+.fund{
+  font: normal normal normal 12px/15px Lato;
+  letter-spacing: 0px;
+  color: #212632;
+  opacity: 1;
+} */
+
+
+
+.row{
+  font: normal normal normal 12px/17px Secular One;
+  letter-spacing: 0px;
+  color: #212632;
+  opacity: 1;
+}
+
+
+
+/* .fundraising{
+  margin-top: 6%;
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00000029;
+  border-radius: 8px;
+  opacity: 1;
+  height: 81%;
+  width: 25%;
+}*/
+
+.fundraising1{
+
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00000029;
+  border-radius: 8px;
+
+} 
+
+.cases{
+  width: 80%;
+  height: 100%;
+}
+
+.arrow{
+  float:right
+}
+
+/* .case1{
+  display: flex;
+  flex-direction: row;
+
+}
+
+.case1 >*{
+  margin-right: 2%;
+} */
+
+.row{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+
+.donationhistory{
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00000029;
+  border-radius: 8px;
+  opacity: 1;
+  margin-left: 2%;
+  margin-top: 2%;
+  height: auto;
+  width: auto;
+}
+
+.table td, .table th{
+  padding: 3%;
+}
+
+
+.table a{
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.tableheadings{
+  text-align: left;
+  font: normal normal normal 16px/19px Lato;
+  letter-spacing: 0px;
+  color: #A8B6B6;
+  text-transform: capitalize;
+  opacity: 1;
+}
+
+.tablestyle{
+  min-height: 70%;
+  width: 90%;
+}
+
+.tablerows{
+  height: 50%;
+  width: auto;
+  text-align: left;
+  font: normal normal normal 16px/23px Secular One;
+  letter-spacing: 0px;
+  color: #212632;
+  text-transform: uppercase;
+  opacity: 1;
 }
