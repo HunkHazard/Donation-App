@@ -1,10 +1,10 @@
-export const login = () => {
+export const admin = () => {
     return (
       <div className="bigdiv">
         <div className="container">
           <div className="loginitems1 mt-2">
             <div>
-              <div className=" flex justify-center">
+              <div className=" flex justify-center pt-4">
                 <img
                   src="/GraphicElements.svg"
                   alt="Graphic Elements"
@@ -17,7 +17,7 @@ export const login = () => {
                 Please enter your login details to sign in.
               </p>
             </div>
-            <h3 className="heading pb-1">Email</h3>
+            <h3 className="heading pb-1 pt-4">Email</h3>
             <input placeholder="Enter your email" className="input mb-2"></input>
             <h3 className="heading pb-1">Password</h3>
             <input
@@ -25,7 +25,7 @@ export const login = () => {
               className="input mb-1"
             ></input>
             <a className="forgor lato-14-blue">Forgot Password?</a>
-            <button className="signin pb-1 pt-1 mb-3">Sign in</button>
+            <button className="signin pb-1 pt-1 mb-6 hover:bg-pink-800">Sign in</button>
           </div>
         </div>
       </div>

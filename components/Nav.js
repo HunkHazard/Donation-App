@@ -2,8 +2,8 @@ import Link from "next/link"
 import Image from "next/image"
 import logo from "../public/logo.svg";
 import heart from "../public/heart.svg";
-import NavDropDown from "@components/profiledropdown.js";
-import BurgerDropDown from "@components/burgernavdropdown.js";
+import NavDropDown from "../components/profiledropdown.js";
+import BurgerDropDown from "../components/burgernavdropdown.js";
 
 const Nav = () => {
     return (

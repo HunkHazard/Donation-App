@@ -17,8 +17,8 @@ export const signup = () => {
                         
                     </div>
                     <div className="signuprow">
-                        <input placeholder="Enter your first name" className="input1"></input>
-                        <input placeholder="Enter your last name" className="input1"></input>
+                        <input placeholder="Enter your first name" className="input"></input>
+                        <input placeholder="Enter your last name" className="input"></input>
                     </div>
                 </div>
 
@@ -41,8 +41,8 @@ export const signup = () => {
                         <p className="heading">Province</p>
                     </div>
                     <div className="signuprow">
-                        <input placeholder="Enter your city" className="input1"></input>
-                        <input placeholder="Enter your province" className="input1"></input>
+                        <input placeholder="Enter your city" className="input"></input>
+                        <input placeholder="Enter your province" className="input"></input>
                     </div>
                 </div>
                 <div className="signuprow">

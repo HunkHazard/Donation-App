@@ -10,10 +10,12 @@ import blue from "../public/BlueSchool.svg";
 import Image from "next/image";
 import BetterFuture from "../components/betterfuture";
 import Footer from "../components/footer";
+import Nav from "../components/Nav";
 
 const Home = () => {
   return (
     <div className=" ">
+      <Nav/>  
       <MainCover />
       <AboutUsMainPage />
       <StatsMainPage />

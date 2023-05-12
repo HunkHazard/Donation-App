@@ -2,11 +2,12 @@ import Image from "next/image";
 import ahad from "../../public/ahad_1.png";
 import uneeb from "../../public/Uneeb.png";
 import logo from "../../public/logo.svg";
+import Nav from "../../components/Nav";
 
 const AboutUs = () => {
-
     return (
-        <div>
+        <div  className="blue-bg">
+            <Nav />
             <div className="2xl:flex hidden flex-col w-full h-auto">
                 <div className="mt-[34px] mb-[34px] flex flex-row items-center my-auto mx-auto secular-40px-45lh main-text ">
                     <div draggable="false" aria-labelledby="title" className="relative py-6 px-12 border-2 border-main group text-main">
@@ -516,8 +517,8 @@ const AboutUs = () => {
                     </div>
                 </div>
             </div>
-            <body className="blue-bg">
-            </body>
+            {/* <body className="blue-bg">
+            </body> */}
         </div>
     )
 }
