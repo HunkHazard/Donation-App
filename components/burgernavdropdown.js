@@ -37,7 +37,7 @@ export default function BurgerDropDown() {
             <Menu.Item>
               {({ active }) => (
                 <Link
-                  href="#"
+                  href="/"
                   className={classNames(
                     active ? 'bg-gray-100 text-gray-900' : 'text-white',
                     'block px-4 py-2 text-sm'
@@ -50,7 +50,7 @@ export default function BurgerDropDown() {
             <Menu.Item>
               {({ active }) => (
                 <Link
-                  href="#"
+                  href="/about-us"
                   className={classNames(
                     active ? 'bg-gray-100 text-gray-900' : 'text-white',
                     'block px-4 py-2 text-sm'
@@ -91,7 +91,7 @@ export default function BurgerDropDown() {
             <Menu.Item>
               {({ active }) => (
                 <Link
-                  href="#"
+                  href="/admin"
                   className={classNames(
                     active ? 'bg-gray-100 text-gray-900' : 'text-white',
                     'block px-4 py-2 text-sm'

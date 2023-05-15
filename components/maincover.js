@@ -18,7 +18,7 @@ const MainCover = () => {
                         <br></br>
                         A CHILD'S <a className="main-text">FUTURE</a>
                         <p className="lato-16px-0lh mb-4 mt-1">We do it for children in need</p>
-                        <button className=" flex flex-row lato-16px-0lh items-center my-auto pt-[07px] pb-[08px] pl-[26px] pr-[26px] main-accent rounded-3xl mt-[0px] mr-[0px] hover:bg-pink-800">
+                        <a href="#donate-nowlg" className="w-40 flex flex-row lato-16px-0lh items-center my-auto pt-[10px] pb-[10px] pl-[26px]  main-accent rounded-3xl hover:bg-pink-800">
                             Donate Now
                             <Image className="ml-[7px]"
                                 src={heart}
@@ -26,7 +26,7 @@ const MainCover = () => {
                                 height={15}
                                 alt="heart"
                             />
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -37,7 +37,7 @@ const MainCover = () => {
                         <br></br>
                         A CHILD'S <a className="main-text">FUTURE</a>
                         <p className="lato-16px-0lh mb-4 mt-1">We do it for children in need</p>
-                        <button className=" flex flex-row lato-16px-0lh items-center my-auto pt-[07px] pb-[08px] pl-[26px] pr-[26px] main-accent rounded-3xl mt-[0px] mr-[0px] hover:bg-pink-800">
+                        <a href="#donate-nowmd" className="w-40 flex flex-row lato-16px-0lh items-center my-auto pt-[10px] pb-[10px] pl-[26px]  main-accent rounded-3xl hover:bg-pink-800">
                             Donate Now
                             <Image className="ml-[7px]"
                                 src={heart}
@@ -45,7 +45,7 @@ const MainCover = () => {
                                 height={15}
                                 alt="heart"
                             />
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -56,7 +56,7 @@ const MainCover = () => {
                         <br></br>
                         A CHILD'S <a className="main-text">FUTURE</a>
                         <p className="lato-16px-0lh mb-4 mt-1">We do it for children in need</p>
-                        <button className=" flex flex-row lato-16px-0lh items-center my-auto pt-[07px] pb-[08px] pl-[26px] pr-[26px] main-accent rounded-3xl mt-[0px] mr-[0px] hover:bg-pink-800">
+                        <a href="/#donate-nowsm" className="w-40 flex flex-row lato-16px-0lh items-center my-auto pt-[10px] pb-[10px] pl-[26px]  main-accent rounded-3xl hover:bg-pink-800">
                             Donate Now
                             <Image className="ml-[7px]"
                                 src={heart}
@@ -64,7 +64,7 @@ const MainCover = () => {
                                 height={15}
                                 alt="heart"
                             />
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -75,7 +75,7 @@ const MainCover = () => {
                         <br></br>
                         A CHILD'S <a className="main-text">FUTURE</a>
                         <p className="lato-16px-0lh mb-4 mt-1">We do it for children in need</p>
-                        <button className=" flex flex-row lato-16px-0lh items-center my-auto pt-[07px] pb-[08px] pl-[26px] pr-[26px] main-accent rounded-3xl mt-[0px] mr-[0px] hover:bg-pink-800">
+                        <a href="#donate-now" className="w-40 flex flex-row lato-16px-0lh items-center my-auto pt-[10px] pb-[10px] pl-[26px]  main-accent rounded-3xl hover:bg-pink-800">
                             Donate Now
                             <Image className="ml-[7px]"
                                 src={heart}
@@ -83,7 +83,7 @@ const MainCover = () => {
                                 height={15}
                                 alt="heart"
                             />
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>

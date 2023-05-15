@@ -3,8 +3,8 @@ const verifyToken = require("./verifyToken");
 import { redirect } from "next/dist/server/api-utils";
 
 async function getUserData(email) {
-  const sql_query = `
-  SELECT Do.FirstName as FirstName, Do.LastName as LastName,
+  const trans_query = `
+  SELECT
   P.Name as project, I.Name as institution, Amount as amount, D.DonationDate as date
   FROM Donation AS D  
   JOIN Donor AS Do ON D.DonorID = Do.DonorID  
@@ -12,10 +12,18 @@ async function getUserData(email) {
   JOIN Institution AS I ON P.InstitutionID = I.InstitutionID 
   where email = ?
   `;
+
+  const username_query = `
+  SELECT FirstName, LastName
+  FROM Donor
+  WHERE email = ?
+  `;
   try {
-    const userData = await db.promise().query(sql_query, [email]);
-    // console.log(userData[0]);
-    return userData[0];
+    const transData = await db.promise().query(trans_query, [email]);
+    const username = await db.promise().query(username_query, [email]);
+    // console.log(transData[0]);
+    // console.log(username[0]);
+    return [username[0][0], transData[0]];
   } catch (err) {
     console.log("ERROR TRANSHISTORY");
     console.log(err);
@@ -27,6 +35,7 @@ export default async function handler(req, res) {
   if (req.method == "POST") {
     try {
       const email = await verifyToken(req);
+      console.log(email);
       const transHistory = await getUserData(email);
       console.log(transHistory);
       res.status(200).json(transHistory);

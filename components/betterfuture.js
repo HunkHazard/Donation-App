@@ -69,7 +69,7 @@ const betterfuture = () => {
                         </div>
                     </div>
                     <div className="flex flex-row w-full justify-center">
-                        <button className=" flex flex-row items-center my-auto pt-[07px] pb-[08px] pl-[26px] pr-[26px] border border-white rounded-3xl hover:bg-pink-800">
+                        <a href="#donate-nowxl" className=" flex flex-row items-center my-auto pt-[07px] pb-[08px] pl-[26px] pr-[26px] border border-white rounded-3xl hover:bg-pink-800">
                             Donate Now
                             <Image className="ml-[7px]"
                                 src={heart}
@@ -77,7 +77,7 @@ const betterfuture = () => {
                                 height={15}
                                 alt="heart"
                             />
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -141,7 +141,7 @@ const betterfuture = () => {
                         </div>
                     </div>
                     <div className="flex flex-row w-full justify-center">
-                        <button className=" flex flex-row items-center my-auto pt-[07px] pb-[08px] pl-[26px] pr-[26px] border border-white rounded-3xl hover:bg-pink-800">
+                        <a href="#donate-nowlg" className=" flex flex-row items-center my-auto pt-[07px] pb-[08px] pl-[26px] pr-[26px] border border-white rounded-3xl hover:bg-pink-800">
                             Donate Now
                             <Image className="ml-[7px]"
                                 src={heart}
@@ -149,7 +149,7 @@ const betterfuture = () => {
                                 height={15}
                                 alt="heart"
                             />
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -160,7 +160,7 @@ const betterfuture = () => {
                     height={349}
                     alt="cover"
                 />
-                <div className="absolute flex flex-col w-3/5 h-3/6 justify-between">
+                <div className="absolute flex flex-col w-3/5 h-80 justify-between">
                     <div className="flex flex-row secular-25px text-center mx-auto">A BETTER FUTURE - IN YOUR HANDS</div>
                     <div className="flex flex-row w-full justify-between ">
                         <div className="flex flex-col items-center">
@@ -213,7 +213,7 @@ const betterfuture = () => {
                         </div>
                     </div>
                     <div className="flex flex-row w-full justify-center">
-                        <button className=" flex flex-row items-center my-auto pt-[07px] pb-[08px] pl-[26px] pr-[26px] border border-white rounded-3xl hover:bg-pink-800">
+                        <a href="#donate-nowmd" className=" flex flex-row items-center my-auto pt-[07px] pb-[08px] pl-[26px] pr-[26px] border border-white rounded-3xl hover:bg-pink-800">
                             Donate Now
                             <Image className="ml-[7px]"
                                 src={heart}
@@ -221,7 +221,7 @@ const betterfuture = () => {
                                 height={15}
                                 alt="heart"
                             />
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -285,7 +285,7 @@ const betterfuture = () => {
                         </div>
                     </div>
                     <div className="flex flex-row w-full pt-8 justify-center">
-                        <button className=" flex flex-row items-center my-auto lato-14-white pt-[08px] pb-[08px] pl-[16px] pr-[16px] border border-white rounded-3xl hover:bg-pink-800">
+                        <a href="#donate-nowsm" className=" flex flex-row items-center my-auto lato-14-white pt-[08px] pb-[08px] pl-[16px] pr-[16px] border border-white rounded-3xl hover:bg-pink-800">
                             Donate Now
                             <Image className="ml-[7px]"
                                 src={heart}
@@ -293,7 +293,7 @@ const betterfuture = () => {
                                 height={15}
                                 alt="heart"
                             />
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -357,7 +357,7 @@ const betterfuture = () => {
                         </div>
                     </div>
                     <div className="flex flex-row w-full justify-center pt-4">
-                        <button className=" flex flex-row items-center my-auto lato-14-white pt-[08px] pb-[08px] pl-[16px] pr-[16px] border border-white rounded-3xl hover:bg-pink-800">
+                        <a href="#donate-now" className=" flex flex-row items-center my-auto lato-14-white pt-[08px] pb-[08px] pl-[16px] pr-[16px] border border-white rounded-3xl hover:bg-pink-800">
                             Donate Now
                             <Image className="ml-[7px]"
                                 src={heart}
@@ -365,7 +365,7 @@ const betterfuture = () => {
                                 height={15}
                                 alt="heart"
                             />
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>

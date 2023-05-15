@@ -11,16 +11,36 @@ import Image from "next/image";
 import BetterFuture from "../components/betterfuture";
 import Footer from "../components/footer";
 import Nav from "../components/Nav";
+import Head from "next/head";
 
 const Home = () => {
   return (
-    <div className=" ">
-      <Nav/>  
+    <div>
+      <Head>
+        <title>Home</title>
+      </Head>
+      <Nav />
       <MainCover />
       <AboutUsMainPage />
       <StatsMainPage />
       <div>
-        <div className="lg:flex hidden">
+        <div id="donate-nowxl" className="2xl:flex hidden">
+          <div className=" secular-25px w-4/5 mx-auto">
+            <r className="blue-text">SHARE </r>
+            <r className="main-text">KINDNESS</r> <br></br>
+            <r className="blue-text">THROUGH </r>
+            <r className="main-text">DONATIONS</r>
+          </div>
+        </div>
+        <div id="donate-nowlg" className="lg:max-2xl:flex hidden">
+          <div className=" secular-25px w-4/5 mx-auto">
+            <r className="blue-text">SHARE </r>
+            <r className="main-text">KINDNESS</r> <br></br>
+            <r className="blue-text">THROUGH </r>
+            <r className="main-text">DONATIONS</r>
+          </div>
+        </div>
+        <div id="donate-nowmd" className="md:max-lg:flex hidden">
           <div className="secular-25px w-4/5 mx-auto">
             <r className="blue-text">SHARE </r>
             <r className="main-text">KINDNESS</r> <br></br>
@@ -28,15 +48,10 @@ const Home = () => {
             <r className="main-text">DONATIONS</r>
           </div>
         </div>
-        <div className="md:max-lg:flex hidden">
-          <div className="secular-25px w-4/5 mx-auto">
-            <r className="blue-text">SHARE </r>
-            <r className="main-text">KINDNESS</r> <br></br>
-            <r className="blue-text">THROUGH </r>
-            <r className="main-text">DONATIONS</r>
-          </div>
-        </div>
-        <div className="sm:max-md:flex hidden flex-row w-4/5 mx-auto">
+        <div
+          id="donate-nowsm"
+          className="sm:max-md:flex hidden flex-row w-4/5 mx-auto"
+        >
           <div className="secular-25px mx-auto">
             <r className="blue-text">SHARE </r>
             <r className="main-text">KINDNESS </r>
@@ -44,7 +59,10 @@ const Home = () => {
             <r className="main-text">DONATIONS</r>
           </div>
         </div>
-        <div className="max-sm:flex hidden flex-row w-4/5 mx-auto">
+        <div
+          id="donate-now"
+          className="max-sm:flex hidden flex-row w-4/5 mx-auto"
+        >
           <div className="secular-20px-upper mx-auto">
             <r className="blue-text">SHARE </r>
             <r className="main-text">KINDNESS </r>

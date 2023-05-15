@@ -1,5 +1,6 @@
 // Import the 'mysql2' library to create a connection to a MySQL database
 const mysql = require("mysql2");
+import { redirect } from "next/dist/server/api-utils";
 
 // Create a new connection object to the MySQL database using the provided configuration options
 const connection = mysql.createConnection({
@@ -10,7 +11,9 @@ const connection = mysql.createConnection({
 });
 
 // Define an empty function for the Next.js route handler
-export default function handler(req, res) {}
+// export async function handler(req, res) {
+//   redirect(res, "/404");
+// }
 
 // Export the 'connection' object to be used in other modules
 module.exports = connection;
