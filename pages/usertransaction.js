@@ -51,26 +51,25 @@ export const usertransaction = () => {
                 </tr>
               </thead>
               <tbody>
-                {transHistory[1].map((tuple) => {
-                  const date = new Date(tuple.date);
-                  tuple.date = date
-                    .toDateString()
-                    .split(" ")
-                    .slice(1)
-                    .join(" ");
-
-                  return (
-                    <tr className="tablerows" key={tuple.project + tuple.date}>
-                      <td>{tuple.project}</td>
-                      <td>{tuple.institution}</td>
-                      <td>{tuple.date}</td>
-                      <td>{tuple.amount}</td>
-                      <td>
-                        <a>VIEW RECEIPT</a>
-                      </td>
-                    </tr>
-                  );
-                })}
+                {transHistory[1].length === 0 ? (
+                  <tr className="tableheadings">
+                    <td>No Transactions</td>
+                  </tr>
+                ) : (
+                  transHistory[1].map((tuple, index) => {
+                    return (
+                      <tr className="tablerows">
+                        <td>{tuple.project}</td>
+                        <td>{tuple.institution}</td>
+                        <td>{tuple.date}</td>
+                        <td>{tuple.amount}</td>
+                        <td>
+                          <a>VIEW RECEIPT</a>
+                        </td>
+                      </tr>
+                    );
+                  })
+                )}
               </tbody>
             </table>
           </div>

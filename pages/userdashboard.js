@@ -6,7 +6,6 @@ import BurgerDropDown from "@/components/sidebardropdown";
 import logo from "../public/logo.svg";
 import { useEffect } from "react";
 import { useState } from "react";
-import { parse } from "postcss";
 
 export const userdashboard = () => {
   const [username, setUsername] = useState("");
@@ -101,7 +100,7 @@ export const userdashboard = () => {
                   Total Donation
                 </p>
                 <p className="bebas-32 pb-6 ml-6 whitespace-nowrap">
-                  PKR 50,000
+                  PKR {stats[0].TotalDonatedAmount}
                 </p>
                 <p className="lato-16-blue ml-6 pb-2">5% than last month</p>
               </div>
@@ -110,7 +109,7 @@ export const userdashboard = () => {
                   Donation Today
                 </p>
                 <p className="bebas-32 pb-6 ml-6 whitespace-nowrap">
-                  PKR 10,000
+                  PKR {stats[1].TotalToday}
                 </p>
                 <p className="lato-16-blue ml-6 pb-2">+2% than last month</p>
               </div>
@@ -157,48 +156,31 @@ export const userdashboard = () => {
             </div>
             <div className=" totaldonation mt-2 md:flex hidden flex-col p-2 justify-between h-full">
               <div className=" flex flex-row">
-                <p className=" lato-25-blue font-bold ml-2 ">Top Donors</p>
-              </div>
-              <div className=" flex flex-row justify-between pb-4">
-                <div className=" flex flex-row">
-                  <img
-                    src="/first.svg"
-                    alt="Graphic Elements"
-                    className=" h-10 ml-2 my-auto"
-                  />
-                  <p className=" lato-16-blue pl-2 my-auto">Quadingle</p>
-                </div>
-                <p className=" lato-16-blue mr-2 my-auto">
-                  PKR 420,000 Donated
+                <p className=" lato-25-blue font-bold ml-2 ">
+                  Top Donors Of All Time
                 </p>
               </div>
-              <div className=" flex flex-row justify-between pb-4">
-                <div className=" flex flex-row">
-                  <img
-                    src="/second.svg"
-                    alt="Graphic Elements"
-                    className=" h-10 ml-2 my-auto"
-                  />
-                  <p className=" lato-16-blue pl-2 my-auto">Arslan G</p>
-                </div>
-                <p className=" lato-16-blue mr-2 my-auto">
-                  PKR 410,000 Donated
-                </p>
-              </div>
-              <div className=" flex flex-row justify-between pb-4">
-                <div className=" flex flex-row">
-                  <img
-                    src="/third.svg"
-                    alt="Graphic Elements"
-                    className=" h-10 ml-2 my-auto"
-                  />
-                  <p className=" lato-16-blue pl-2 my-auto">Jawad Sagheer</p>
-                </div>
-
-                <p className=" lato-16-blue mr-2 my-auto">
-                  PKR 400,000 Donated
-                </p>
-              </div>
+              {stats[5].map((tuple, index) => {
+                return (
+                  <>
+                    <div className=" flex flex-row justify-between pb-4">
+                      <div className=" flex flex-row">
+                        <img
+                          src={`/${index + 1}.svg`}
+                          alt="Graphic Elements"
+                          className=" h-10 ml-2 my-auto"
+                        />
+                        <p className=" lato-16-blue pl-2 my-auto">
+                          {tuple.FirstName + " " + tuple.LastName}
+                        </p>
+                      </div>
+                      <p className=" lato-16-blue mr-2 my-auto">
+                        PKR {tuple.amount} Donated
+                      </p>
+                    </div>
+                  </>
+                );
+              })}
             </div>
             <div className=" totaldonation mt-2 sm:max-md:flex flex-col justify-between hidden h-full">
               <div className=" flex flex-row mt-4">
