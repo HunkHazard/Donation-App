@@ -1,6 +1,71 @@
 import Sidebar from "./empsidebar";
+import { useState, useEffect } from "react";
 
 export const empdashboard = () => {
+  const [username, setUsername] = useState("");
+  const [stats, setStats] = useState([]);
+  const [cases, setCases] = useState([]);
+
+  // fetch user data from api/user.js
+  useEffect(() => {
+    const token = localStorage.getItem("admintoken");
+    // if token is not present, redirect to login page
+    if (!token) {
+      // alert("Please login to view this page");
+      window.location.href = "/admin";
+    } else {
+      // fetch user data
+      try {
+        fetch("http://localhost:3000/api/admindash", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        })
+          .then((res) => {
+            if (res.status === 401) {
+              throw new Error("Invalid Token - redirect to login");
+            } else {
+              return res.json();
+            }
+          })
+          .then((data) => {
+            // console.log(data.results[0][0]);
+            // console.log(data.results);
+            // console.log(data.stats);
+            console.log(data.cases);
+            const name = data.results.FirstName + " " + data.results.LastName;
+            setUsername(name);
+            setCases(data.cases);
+            // console.log(data.stats);
+            setStats(data.stats);
+            // console.log(stats);
+            // console.log(data);
+          })
+          .catch((err) => {
+            console.log(err.message);
+            // alert(err.message);
+            localStorage.removeItem("admintoken");
+            window.location.href = "/admin";
+          });
+      } catch (err) {
+        console.log(err.message);
+      }
+    }
+  }, []);
+
+  useEffect(() => {
+    // console.log({ stats });
+  }, [stats]);
+
+  // if the user is not logged in, redirected to login page (done to prevent page from loading
+  // before useEffect is executed)
+
+  if (!username) {
+    return null;
+  }
+
   return (
     <div className="main">
       <div className=" lg:flex hidden">
@@ -170,72 +235,76 @@ export const empdashboard = () => {
               <p className="lato-25-blue ml-6 pb-6 whitespace-nowrap">
                 Total Donors
               </p>
-              <p className="bebas-32-blue pb-6 ml-6 whitespace-nowrap">5200</p>
+              <p className="bebas-32-blue pb-6 ml-6 whitespace-nowrap">
+                {stats[6].totalDonors}
+              </p>
               <p className="lato-16-blue ml-6 pb-2 whitespace-nowrap">
                 +2% than last month
               </p>
             </div>
             <div className="fundraising1 flex flex-col justify-between h-full w-full ml-2">
-            <div className=" flex flex-row">
-              <p className="lato-20-blue pr-2 pt-2 pl-2">Your fundraising</p>
-              <img
-                src="/arrow-small-right.svg"
-                alt="Graphic Elements"
-                className=" h-5 float-right"
-              />
-            </div>
-            <div className=" flex flex-col justify-between ml-2 pt-3 pb-5">
-              <p className="secular-14px-upper pb-2">CASE # 01 TITLE</p>
-              <div className=" flex flex-row pb-2">
+              <div className=" flex flex-row">
+                <p className="lato-20-blue pr-2 pt-2 pl-2">Your fundraising</p>
                 <img
-                  src="/OBJECTS.svg"
+                  src="/arrow-small-right.svg"
                   alt="Graphic Elements"
-                  className=" h-4 mr-1 "
+                  className=" h-5 float-right"
                 />
-                <p className="lato-12-blue">Elementary School</p>
               </div>
-              <div className="progressbar">
-                <div className="progress"></div>
+              <div className=" flex flex-col justify-between ml-2 pt-3 pb-5">
+                <p className="secular-14px-upper pb-2">CASE # 01 TITLE</p>
+                <div className=" flex flex-row pb-2">
+                  <img
+                    src="/OBJECTS.svg"
+                    alt="Graphic Elements"
+                    className=" h-4 mr-1 "
+                  />
+                  <p className="lato-12-blue">Elementary School</p>
+                </div>
+                <div className="progressbar">
+                  <div className="progress"></div>
+                </div>
+                <div className=" flex flex-row justify-between pt-1">
+                  <p className="lato-10-blue">PKR 50,000/PKR 90,000</p>
+                  <p className="lato-10-blue">60%</p>
+                </div>
               </div>
-              <div className=" flex flex-row justify-between pt-1">
-                <p className="lato-10-blue">PKR 50,000/PKR 90,000</p>
-                <p className="lato-10-blue">60%</p>
+              <div className=" flex flex-col justify-between ml-2 pt-3 pb-5">
+                <p className="secular-14px-upper pb-2">CASE # 01 TITLE</p>
+                <div className=" flex flex-row pb-2">
+                  <img
+                    src="/OBJECTS.svg"
+                    alt="Graphic Elements"
+                    className=" h-4 mr-1 "
+                  />
+                  <p className="lato-12-blue">Elementary School</p>
+                </div>
+                <div className="progressbar">
+                  <div className="progress"></div>
+                </div>
+                <div className=" flex flex-row justify-between pt-1">
+                  <p className="lato-10-blue">PKR 50,000/PKR 90,000</p>
+                  <p className="lato-10-blue">60%</p>
+                </div>
               </div>
-            </div><div className=" flex flex-col justify-between ml-2 pt-3 pb-5">
-              <p className="secular-14px-upper pb-2">CASE # 01 TITLE</p>
-              <div className=" flex flex-row pb-2">
-                <img
-                  src="/OBJECTS.svg"
-                  alt="Graphic Elements"
-                  className=" h-4 mr-1 "
-                />
-                <p className="lato-12-blue">Elementary School</p>
+              <div className=" flex flex-col justify-between ml-2 pt-3 pb-5">
+                <p className="secular-14px-upper pb-2">CASE # 01 TITLE</p>
+                <div className=" flex flex-row pb-2">
+                  <img
+                    src="/OBJECTS.svg"
+                    alt="Graphic Elements"
+                    className=" h-4 mr-1 "
+                  />
+                  <p className="lato-12-blue">Elementary School</p>
+                </div>
+                <div className="progressbar">
+                  <div className="progress"></div>
+                </div>
+                <div className=" flex flex-row justify-between pt-1">
+                  <p className="lato-10-blue">PKR 50,000/PKR 90,000</p>
+                  <p className="lato-10-blue">60%</p>
+                </div>
               </div>
-              <div className="progressbar">
-                <div className="progress"></div>
-              </div>
-              <div className=" flex flex-row justify-between pt-1">
-                <p className="lato-10-blue">PKR 50,000/PKR 90,000</p>
-                <p className="lato-10-blue">60%</p>
-              </div>
-            </div><div className=" flex flex-col justify-between ml-2 pt-3 pb-5">
-              <p className="secular-14px-upper pb-2">CASE # 01 TITLE</p>
-              <div className=" flex flex-row pb-2">
-                <img
-                  src="/OBJECTS.svg"
-                  alt="Graphic Elements"
-                  className=" h-4 mr-1 "
-                />
-                <p className="lato-12-blue">Elementary School</p>
-              </div>
-              <div className="progressbar">
-                <div className="progress"></div>
-              </div>
-              <div className=" flex flex-row justify-between pt-1">
-                <p className="lato-10-blue">PKR 50,000/PKR 90,000</p>
-                <p className="lato-10-blue">60%</p>
-              </div>
-            </div>
             </div>
           </div>
           <div className=" sm:max-md:flex hidden flex-col">
@@ -249,86 +318,86 @@ export const empdashboard = () => {
               </p>
             </div>
             <div className="fundraising1 h-full w-full flex flex-col justify-between">
-            <div className=" flex flex-row">
-              <p className="lato-16-blue pr-2 pt-2 pl-1">Your fundraising</p>
-              <img
-                src="/arrow-small-right.svg"
-                alt="Graphic Elements"
-                className=" h-4 float-right"
-              />
-            </div>
-            <div className=" flex flex-col justify-between ml-1 pt-3 pb-5">
-              <p className="secular-12px-upper pb-2">CASE # 01 TITLE</p>
-              <div className=" flex flex-row pb-2">
+              <div className=" flex flex-row">
+                <p className="lato-16-blue pr-2 pt-2 pl-1">Your fundraising</p>
                 <img
-                  src="/OBJECTS.svg"
+                  src="/arrow-small-right.svg"
                   alt="Graphic Elements"
-                  className=" h-3 mr-1 "
+                  className=" h-4 float-right"
                 />
-                <p className="lato-10-blue">Elementary School</p>
               </div>
-              <div className="progressbar">
-                <div className="progress"></div>
+              <div className=" flex flex-col justify-between ml-1 pt-3 pb-5">
+                <p className="secular-12px-upper pb-2">CASE # 01 TITLE</p>
+                <div className=" flex flex-row pb-2">
+                  <img
+                    src="/OBJECTS.svg"
+                    alt="Graphic Elements"
+                    className=" h-3 mr-1 "
+                  />
+                  <p className="lato-10-blue">Elementary School</p>
+                </div>
+                <div className="progressbar">
+                  <div className="progress"></div>
+                </div>
+                <div className=" flex flex-row justify-between pt-1">
+                  <p className="lato-10-blue">PKR 50,000/PKR 90,000</p>
+                  <p className="lato-10-blue">60%</p>
+                </div>
               </div>
-              <div className=" flex flex-row justify-between pt-1">
-                <p className="lato-10-blue">PKR 50,000/PKR 90,000</p>
-                <p className="lato-10-blue">60%</p>
+              <div className=" flex flex-col justify-between ml-1 pt-3 pb-5">
+                <p className="secular-12px-upper pb-2">CASE # 01 TITLE</p>
+                <div className=" flex flex-row pb-2">
+                  <img
+                    src="/OBJECTS.svg"
+                    alt="Graphic Elements"
+                    className=" h-3 mr-1 "
+                  />
+                  <p className="lato-10-blue">Elementary School</p>
+                </div>
+                <div className="progressbar">
+                  <div className="progress"></div>
+                </div>
+                <div className=" flex flex-row justify-between pt-1">
+                  <p className="lato-10-blue">PKR 50,000/PKR 90,000</p>
+                  <p className="lato-10-blue">60%</p>
+                </div>
+              </div>{" "}
+              <div className=" flex flex-col justify-between ml-1 pt-3 pb-5">
+                <p className="secular-12px-upper pb-2">CASE # 01 TITLE</p>
+                <div className=" flex flex-row pb-2">
+                  <img
+                    src="/OBJECTS.svg"
+                    alt="Graphic Elements"
+                    className=" h-3 mr-1 "
+                  />
+                  <p className="lato-10-blue">Elementary School</p>
+                </div>
+                <div className="progressbar">
+                  <div className="progress"></div>
+                </div>
+                <div className=" flex flex-row justify-between pt-1">
+                  <p className="lato-10-blue">PKR 50,000/PKR 90,000</p>
+                  <p className="lato-10-blue">60%</p>
+                </div>
+              </div>{" "}
+              <div className=" flex flex-col justify-between ml-1 pt-3 pb-5">
+                <p className="secular-12px-upper pb-2">CASE # 01 TITLE</p>
+                <div className=" flex flex-row pb-2">
+                  <img
+                    src="/OBJECTS.svg"
+                    alt="Graphic Elements"
+                    className=" h-3 mr-1 "
+                  />
+                  <p className="lato-10-blue">Elementary School</p>
+                </div>
+                <div className="progressbar">
+                  <div className="progress"></div>
+                </div>
+                <div className=" flex flex-row justify-between pt-1">
+                  <p className="lato-10-blue">PKR 50,000/PKR 90,000</p>
+                  <p className="lato-10-blue">60%</p>
+                </div>
               </div>
-            </div>
-            <div className=" flex flex-col justify-between ml-1 pt-3 pb-5">
-              <p className="secular-12px-upper pb-2">CASE # 01 TITLE</p>
-              <div className=" flex flex-row pb-2">
-                <img
-                  src="/OBJECTS.svg"
-                  alt="Graphic Elements"
-                  className=" h-3 mr-1 "
-                />
-                <p className="lato-10-blue">Elementary School</p>
-              </div>
-              <div className="progressbar">
-                <div className="progress"></div>
-              </div>
-              <div className=" flex flex-row justify-between pt-1">
-                <p className="lato-10-blue">PKR 50,000/PKR 90,000</p>
-                <p className="lato-10-blue">60%</p>
-              </div>
-            </div>{" "}
-            <div className=" flex flex-col justify-between ml-1 pt-3 pb-5">
-              <p className="secular-12px-upper pb-2">CASE # 01 TITLE</p>
-              <div className=" flex flex-row pb-2">
-                <img
-                  src="/OBJECTS.svg"
-                  alt="Graphic Elements"
-                  className=" h-3 mr-1 "
-                />
-                <p className="lato-10-blue">Elementary School</p>
-              </div>
-              <div className="progressbar">
-                <div className="progress"></div>
-              </div>
-              <div className=" flex flex-row justify-between pt-1">
-                <p className="lato-10-blue">PKR 50,000/PKR 90,000</p>
-                <p className="lato-10-blue">60%</p>
-              </div>
-            </div>{" "}
-            <div className=" flex flex-col justify-between ml-1 pt-3 pb-5">
-              <p className="secular-12px-upper pb-2">CASE # 01 TITLE</p>
-              <div className=" flex flex-row pb-2">
-                <img
-                  src="/OBJECTS.svg"
-                  alt="Graphic Elements"
-                  className=" h-3 mr-1 "
-                />
-                <p className="lato-10-blue">Elementary School</p>
-              </div>
-              <div className="progressbar">
-                <div className="progress"></div>
-              </div>
-              <div className=" flex flex-row justify-between pt-1">
-                <p className="lato-10-blue">PKR 50,000/PKR 90,000</p>
-                <p className="lato-10-blue">60%</p>
-              </div>
-            </div>
             </div>
           </div>
         </div>
