@@ -36,7 +36,7 @@ const Home = () => {
       <AboutUsMainPage />
       <StatsMainPage />
       <div>
-        <div id="donate-nowxl" className="2xl:flex hidden">
+        <div id="donate-nowxl" className="2xl:flex hidden mb-4">
           <div className=" secular-25px w-4/5 mx-auto">
             <r className="blue-text">SHARE </r>
             <r className="main-text">KINDNESS</r> <br></br>
@@ -44,7 +44,7 @@ const Home = () => {
             <r className="main-text">DONATIONS</r>
           </div>
         </div>
-        <div id="donate-nowlg" className="lg:max-2xl:flex hidden">
+        <div id="donate-nowlg" className="lg:max-2xl:flex hidden mb-4">
           <div className=" secular-25px w-4/5 mx-auto">
             <r className="blue-text">SHARE </r>
             <r className="main-text">KINDNESS</r> <br></br>
@@ -52,7 +52,7 @@ const Home = () => {
             <r className="main-text">DONATIONS</r>
           </div>
         </div>
-        <div id="donate-nowmd" className="md:max-lg:flex hidden">
+        <div id="donate-nowmd" className="md:max-lg:flex hidden mb-4">
           <div className="secular-25px w-4/5 mx-auto">
             <r className="blue-text">SHARE </r>
             <r className="main-text">KINDNESS</r> <br></br>
@@ -62,8 +62,7 @@ const Home = () => {
         </div>
         <div
           id="donate-nowsm"
-          className="sm:max-md:flex hidden flex-row w-4/5 mx-auto"
-        >
+          className="sm:max-md:flex hidden flex-row w-4/5 mx-auto mb-4">
           <div className="secular-25px mx-auto">
             <r className="blue-text">SHARE </r>
             <r className="main-text">KINDNESS </r>
@@ -73,7 +72,7 @@ const Home = () => {
         </div>
         <div
           id="donate-now"
-          className="max-sm:flex hidden flex-row w-4/5 mx-auto"
+          className="max-sm:flex hidden flex-row w-4/5 mx-auto mb-4"
         >
           <div className="secular-20px-upper mx-auto">
             <r className="blue-text">SHARE </r>
