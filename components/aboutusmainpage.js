@@ -13,7 +13,7 @@ const aboutusmainpage = () => {
     }, [])
     return (
         <div>
-            <div className="w-full bg-floral-white-bg sm:h-96 md:h-96 h-80 " data-aos="fade-up" data-aos-easing="linear"
+            <div className="w-full bg-floral-white-bg sm:h-96 md:h-96 h-80 "
                 data-aos-duration="500">
             </div>
             <div className="lg:flex hidden w-4/5 flex-row items-center mx-auto pt-16 pb-16 h-auto" >

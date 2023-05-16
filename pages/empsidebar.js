@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router"
-export const usersidebar = () => {
+export const empsidebar = () => {
   const router = useRouter();
 
   const isActiveLink = (href) => {
@@ -45,4 +45,4 @@ export const usersidebar = () => {
   );
 };
 
-export default usersidebar;
+export default empsidebar;

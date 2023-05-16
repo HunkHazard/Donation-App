@@ -51,7 +51,7 @@ const Nav = () => {
                 </div>
                 {/* Mobile Nav */}
                 <div className="sm:hidden flex relative">
-                    <Link href="/" className="my-auto">
+                    <Link href="#" className="my-auto">
                         <BurgerDropDown />
                     </Link>
                 </div>
