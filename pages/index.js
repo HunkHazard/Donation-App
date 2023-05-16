@@ -87,7 +87,7 @@ const Home = () => {
             <r className="main-text">DONATIONS</r>
           </div>
         </div>
-        <div className="lg:flex hidden flex-row pt-6 pb-4 justify-end w-4/5 mx-auto">
+        {/* <div className="lg:flex hidden flex-row pt-6 pb-4 justify-end w-4/5 mx-auto">
           <Image
             className="w-auto h-auto object-contain rotate-180 mr-2 opacity-50"
             src={forward}
@@ -150,81 +150,14 @@ const Home = () => {
             height={349}
             alt="cover"
           />
-        </div>
+        </div> */}
         <div>
-          <div className="pb-6">
+          <div className="flex flex-col h-96 overflow-y-scroll ">
             <Cases />
-          </div>
-          <div className="pb-6">
             <Cases />
-          </div>
-          <div className="pb-6">
             <Cases />
-          </div>
-
-          <div className="sm:flex hidden flex-row justify-center pb-4">
-            <div className="flex flex-col justify-center items-center pr-4">
-              <Image
-                className="w-[80px] h-[80px] object-contain"
-                src={orange}
-                width={287}
-                height={349}
-                alt="cover"
-              />
-              <p className=" lato-16-blue-bold ">Elementary School</p>
-            </div>
-            <div className="flex flex-col justify-center items-center pl-4 pr-4">
-              <Image
-                className="w-[80px] h-[80px] object-contain"
-                src={green}
-                width={287}
-                height={349}
-                alt="cover"
-              />
-              <p className=" lato-16-blue-bold ">Middle School</p>
-            </div>
-            <div className="flex flex-col justify-center items-center pl-4">
-              <Image
-                className="w-[80px] h-[80px] object-contain"
-                src={blue}
-                width={287}
-                height={349}
-                alt="cover"
-              />
-              <p className=" lato-16-blue-bold ">High School</p>
-            </div>
-          </div>
-          <div className="sm:hidden flex flex-row justify-center pb-4">
-            <div className="flex flex-col justify-center items-center pr-2">
-              <Image
-                className="w-[60px] h-[60px] object-contain"
-                src={orange}
-                width={287}
-                height={349}
-                alt="cover"
-              />
-              <p className=" lato-14-blue-bold ">Elementary School</p>
-            </div>
-            <div className="flex flex-col justify-center items-center pl-2 pr-2">
-              <Image
-                className="w-[60px] h-[60px] object-contain"
-                src={green}
-                width={287}
-                height={349}
-                alt="cover"
-              />
-              <p className=" lato-14-blue-bold ">Middle School</p>
-            </div>
-            <div className="flex flex-col justify-center items-center pl-2">
-              <Image
-                className="w-[60px] h-[60px] object-contain"
-                src={blue}
-                width={287}
-                height={349}
-                alt="cover"
-              />
-              <p className=" lato-14-blue-bold ">High School</p>
-            </div>
+            <Cases />
+            <Cases />
           </div>
         </div>
       </div>
