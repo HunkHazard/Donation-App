@@ -21,7 +21,7 @@ const Home = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        // console.log(data);
+        console.log(data);
         setCases(data);
       });
   }, []);
@@ -148,11 +148,22 @@ const Home = () => {
         </div> */}
         <div>
           <div className="flex flex-col h-96 overflow-y-scroll ">
+            {cases.map((tuple, index) => {
+              return (
+                <Cases
+                  text={tuple.pname}
+                  required={tuple.required}
+                  collected={tuple.collected}
+                  id={tuple.pid}
+                />
+              );
+            })}
+
+            {/* <Cases />
             <Cases />
             <Cases />
             <Cases />
-            <Cases />
-            <Cases />
+            <Cases /> */}
           </div>
         </div>
       </div>
