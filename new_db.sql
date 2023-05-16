@@ -18,10 +18,6 @@
 --
 -- Table structure for table `Admin`
 --
-drop database if exists `Donations`;
-create database Donations;
-use Donations;
-
 
 DROP TABLE IF EXISTS `Admin`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -64,7 +60,7 @@ CREATE TABLE `Donation` (
   KEY `ProjectID` (`ProjectID`),
   CONSTRAINT `Donation_ibfk_1` FOREIGN KEY (`DonorID`) REFERENCES `Donor` (`DonorID`),
   CONSTRAINT `Donation_ibfk_2` FOREIGN KEY (`ProjectID`) REFERENCES `Project` (`ProjectID`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -83,12 +79,12 @@ UNLOCK TABLES;
 /*!50003 SET character_set_results = utf8mb4 */ ;
 /*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'NO_AUTO_VALUE_ON_ZERO' */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `update_project_collected` AFTER INSERT ON `Donation` FOR EACH ROW BEGIN
-    UPDATE `Project`
-    SET `Collected` = `Collected` + NEW.Amount
-    WHERE `ProjectID` = NEW.ProjectID;
+/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `update_project_collected` AFTER INSERT ON `Donation` FOR EACH ROW BEGIN 
+  UPDATE Project 
+  SET Collected = Collected + NEW.Amount 
+  WHERE ProjectID = NEW.ProjectID; 
 END */;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -137,10 +133,9 @@ CREATE TABLE `Institution` (
   `InstitutionID` int NOT NULL AUTO_INCREMENT,
   `Name` varchar(50) NOT NULL,
   `Address` varchar(70) NOT NULL,
-  `City` varchar(50) NOT NULL,
   `Province` varchar(50) NOT NULL,
   PRIMARY KEY (`InstitutionID`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -149,7 +144,7 @@ CREATE TABLE `Institution` (
 
 LOCK TABLES `Institution` WRITE;
 /*!40000 ALTER TABLE `Institution` DISABLE KEYS */;
-INSERT INTO `Institution` VALUES (1,'Edhi Foundation','Clifton, Karachi','Karachi','Sindh'),(2,'SOS Village','Gulberg, Lahore','Lahore','Punjab'),(3,'Shaukat Khanum Memorial Cancer Hospital','Johar Town, Lahore','Lahore','Punjab'),(4,'Humanity Hospital','F-8, Islamabad','Islamabad','Islamabad Capital Territory'),(5,'LRBT Eye Hospital','Multan Road, Lahore','Lahore','Punjab');
+INSERT INTO `Institution` VALUES (1,'Edhi Foundation','Clifton, Karachi','Sindh'),(2,'SOS Village','Gulberg, Lahore','Punjab'),(3,'Shaukat Khanum Memorial Cancer Hospital','Johar Town, Lahore','Punjab'),(4,'Humanity Hospital','F-8, Islamabad','Islamabad Capital Territory'),(5,'LRBT Eye Hospital','Multan Road, Lahore','Punjab'),(6,'NUST','H12, Islamabad','Federal');
 /*!40000 ALTER TABLE `Institution` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -170,7 +165,7 @@ CREATE TABLE `Project` (
   PRIMARY KEY (`ProjectID`),
   KEY `InstitutionID` (`InstitutionID`),
   CONSTRAINT `Project_ibfk_1` FOREIGN KEY (`InstitutionID`) REFERENCES `Institution` (`InstitutionID`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -192,4 +187,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-05-16 11:20:50
+-- Dump completed on 2023-05-17  0:02:28
