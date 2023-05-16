@@ -16,7 +16,7 @@ const Nav = () => {
     return (
         <div>
             <div className="flex flex-row w-full p-5 h-14 main-accent items-center justify-between">
-                <Link href="/">
+                <Link href="/" className="w-14 h-auto">
                     <Image
                         src={logo}
                         width={45}
