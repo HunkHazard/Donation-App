@@ -12,23 +12,36 @@ import BetterFuture from "../components/betterfuture";
 import Footer from "../components/footer";
 import Nav from "../components/Nav";
 import Head from "next/head";
-
+import { useEffect, useState } from "react";
 
 const Home = () => {
+  const [cases, setCases] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:3000/api/cases", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        // console.log(data);
+        setCases(data);
+      });
+  }, []);
 
   return (
     <div>
       <Head>
-        <title>
-          Home
-        </title>
+        <title>Home</title>
       </Head>
       <Nav />
       <MainCover />
       <AboutUsMainPage />
       <StatsMainPage />
       <div>
-      <div id="donate-nowxl" className="2xl:flex hidden">
+        <div id="donate-nowxl" className="2xl:flex hidden">
           <div className=" secular-25px w-4/5 mx-auto">
             <r className="blue-text">SHARE </r>
             <r className="main-text">KINDNESS</r> <br></br>
@@ -52,7 +65,10 @@ const Home = () => {
             <r className="main-text">DONATIONS</r>
           </div>
         </div>
-        <div id="donate-nowsm" className="sm:max-md:flex hidden flex-row w-4/5 mx-auto">
+        <div
+          id="donate-nowsm"
+          className="sm:max-md:flex hidden flex-row w-4/5 mx-auto"
+        >
           <div className="secular-25px mx-auto">
             <r className="blue-text">SHARE </r>
             <r className="main-text">KINDNESS </r>
@@ -60,7 +76,10 @@ const Home = () => {
             <r className="main-text">DONATIONS</r>
           </div>
         </div>
-        <div id="donate-now" className="max-sm:flex hidden flex-row w-4/5 mx-auto">
+        <div
+          id="donate-now"
+          className="max-sm:flex hidden flex-row w-4/5 mx-auto"
+        >
           <div className="secular-20px-upper mx-auto">
             <r className="blue-text">SHARE </r>
             <r className="main-text">KINDNESS </r>
