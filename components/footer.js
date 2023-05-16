@@ -125,6 +125,7 @@ const footer = () => {
                     </div>
                 </div>
                 <hr />
+                <div className="bg-gray-200 w-full h-[0.5px]"></div>
                 <div className="pb-2">&#169; Donations 2023</div>
             </div>
             <div className="max-sm:flex hidden flex-col mx-auto w-full h-72 blue-bg items-center">

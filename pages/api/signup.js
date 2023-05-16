@@ -53,7 +53,8 @@ async function emailCheck(email) {
 export default async function handler(req, res) {
   if (req.method == "POST") {
     try {
-      await emailCheck(req.body.payload.email);
+      // console.log(req);
+      await emailCheck(req.body.email);
       await addToDB(req);
       res.status(200).json({ message: "Signup successful" });
     } catch (err) {

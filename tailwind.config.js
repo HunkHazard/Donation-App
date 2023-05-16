@@ -1,5 +1,16 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  plugins: [require("daisyui")],
+  daisyui: {
+    styled: true,
+    themes: true,
+    base: true,
+    utils: true,
+    logs: true,
+    rtl: false,
+    prefix: "",
+    darkTheme: "light",
+  },
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -23,5 +34,4 @@ module.exports = {
       xl: ['24px', '32px'],
     },
   },
-  plugins: [],
 }
