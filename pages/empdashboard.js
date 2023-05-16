@@ -104,28 +104,25 @@ export const empdashboard = () => {
                 <p className="lato-25-blue font-bold ml-6 pb-6 whitespace-nowrap">
                   Total Donation
                 </p>
-                <p className="bebas-32 pb-6 ml-6 whitespace-nowrap">
-                  PKR 50,000
+                <p className="bebas-50px main-text text-5xl text-base/8 pb-6 ml-6 whitespace-nowrap">
+                  <r className="bebas-32">PKR</r> <br></br>{stats[0].TotalDonatedAmount}
                 </p>
-                <p className="lato-16-blue ml-6 pb-2">5% than last month</p>
               </div>
               <div className="totaldonation pt-2 pb-4 pr-6 pl-1">
                 <p className="lato-25-blue font-bold ml-6 pb-6 whitespace-nowrap">
                   Donation Today
                 </p>
-                <p className="bebas-32 pb-6 ml-6 whitespace-nowrap">
-                  PKR 10,000
+                <p className="bebas-50px main-text text-5xl text-base/8 pb-6 ml-6 whitespace-nowrap">
+                  <r className="bebas-32">PKR</r> <br></br>{stats[1].TotalToday}
                 </p>
-                <p className="lato-16-blue ml-6 pb-2">+2% than last month</p>
               </div>
               <div className="totaldonation pt-2 pb-4 pr-6 pl-1">
                 <p className="lato-25-blue font-bold ml-6 pb-6 whitespace-nowrap">
                   Total Donors
                 </p>
-                <p className="bebas-32 pb-6 ml-6 blue-text whitespace-nowrap">
-                  5200
+                <p className="bebas-60px blue-text my-auto text-base/8 pb-6 ml-6 whitespace-nowrap">
+                  {stats[6].totalDonors}
                 </p>
-                <p className="lato-16-blue ml-6 pb-2">+2% than last month</p>
               </div>
             </div>
             <div className="donations pr-1 mr-3 sm:max-md:flex flex-row hidden ">
@@ -133,28 +130,26 @@ export const empdashboard = () => {
                 <p className="lato-20-blue font-bold ml-4 whitespace-nowrap">
                   Total Donation
                 </p>
-                <p className="bebas-32 ml-4 pt-3 pb-3 whitespace-nowrap">
-                  PKR 50,000
+                <p className="bebas-50px main-text text-5xl text-base/8 pb-6 ml-6 whitespace-nowrap">
+                  <r className="bebas-32">PKR</r> <br></br>{stats[0].TotalDonatedAmount}
                 </p>
-                <p className="lato-16-blue ml-4 pb-2">5% than last month</p>
               </div>
               <div className="totaldonation1 pt-2 pb-2 pr-4 flex flex-col justify-between">
                 <p className="lato-20-blue font-bold ml-4 whitespace-nowrap">
                   Donation Today
                 </p>
-                <p className="bebas-32 ml-4 pt-3 pb-3 whitespace-nowrap">
-                  PKR 10,000
+                <p className="bebas-50px main-text text-5xl text-base/8 pb-6 ml-6 whitespace-nowrap">
+                  <r className="bebas-32">PKR</r> <br></br>{stats[1].TotalToday}
                 </p>
-                <p className="lato-16-blue ml-4 pb-2">+2% than last month</p>
               </div>
               <div className="totaldonation1 pt-2 pb-2 pr-4 flex flex-col justify-between">
                 <p className="lato-20-blue font-bold ml-4 whitespace-nowrap">
                   Total Donors
                 </p>
-                <p className="bebas-32 ml-4 blue-text pt-3 pb-3 whitespace-nowrap">
-                  5200
+                <p className="bebas-60px blue-text my-auto text-base/8 pb-6 ml-6 whitespace-nowrap">
+                  {stats[6].totalDonors}
                 </p>
-                <p className="lato-16-blue ml-4 pb-2">+2% than last month</p>
+
               </div>
             </div>
             <div className="max-sm:flex flex-row hidden h-80 overflow-x-scroll">
@@ -163,28 +158,25 @@ export const empdashboard = () => {
                   <p className="lato-16-blue font-bold whitespace-nowrap">
                     Total Donation
                   </p>
-                  <p className="bebas-26 pb-6 pt-6 whitespace-nowrap">
-                    PKR 50,000
+                  <p className="bebas-40px main-text text-5xl text-base/8 pb-6 mt-2 whitespace-nowrap">
+                    <r className="bebas-32">PKR</r> <br></br>{stats[0].TotalDonatedAmount}
                   </p>
-                  <p className="lato-12-blue">5% than last month</p>
                 </div>
                 <div className="totaldonation w-max h-max p-5 flex flex-col mb-2">
                   <p className="lato-16-blue font-bold whitespace-nowrap">
                     Donation Today
                   </p>
-                  <p className="bebas-26 pb-6 pt-6 whitespace-nowrap">
-                    PKR 10,000
+                  <p className="bebas-40px main-text text-5xl text-base/8 pb-6 mt-2 whitespace-nowrap">
+                    <r className="bebas-32">PKR</r> <br></br>{stats[1].TotalToday}
                   </p>
-                  <p className="lato-12-blue">+2% than last month</p>
                 </div>
                 <div className="totaldonation w-max h-max p-5 flex flex-col mb-2">
                   <p className="lato-16-blue font-bold whitespace-nowrap">
                     Total Donors
                   </p>
-                  <p className="bebas-26 pb-6 pt-6 blue-text whitespace-nowrap">
-                    5200
-                  </p>
-                  <p className="lato-12-blue whitespace-nowrap">+2% than last month</p>
+                  <p className="bebas-50px blue-text my-auto text-base/8 pb-6 mt-10 whitespace-nowrap">
+                  {stats[6].totalDonors}
+                </p>
                 </div>
               </div>
             </div>
@@ -192,46 +184,27 @@ export const empdashboard = () => {
               <div className=" flex flex-row">
                 <p className=" lato-25-blue font-bold ml-2 mb-2 ">Top Donors</p>
               </div>
-              <div className=" flex flex-row justify-between pb-4">
-                <div className=" flex flex-row">
-                  <img
-                    src="/first.svg"
-                    alt="Graphic Elements"
-                    className=" h-10 ml-2 my-auto"
-                  />
-                  <p className=" lato-16-blue pl-2 my-auto">Quadingle</p>
-                </div>
-                <p className=" lato-16-blue mr-2 my-auto">
-                  PKR 420,000 Donated
-                </p>
-              </div>
-              <div className=" flex flex-row justify-between pb-4">
-                <div className=" flex flex-row">
-                  <img
-                    src="/second.svg"
-                    alt="Graphic Elements"
-                    className=" h-10 ml-2 my-auto"
-                  />
-                  <p className=" lato-16-blue pl-2 my-auto">Arslan G</p>
-                </div>
-                <p className=" lato-16-blue mr-2 my-auto">
-                  PKR 410,000 Donated
-                </p>
-              </div>
-              <div className=" flex flex-row justify-between pb-4">
-                <div className=" flex flex-row">
-                  <img
-                    src="/third.svg"
-                    alt="Graphic Elements"
-                    className=" h-10 ml-2 my-auto"
-                  />
-                  <p className=" lato-16-blue pl-2 my-auto">Jawad Sagheer</p>
-                </div>
-
-                <p className=" lato-16-blue mr-2 my-auto">
-                  PKR 400,000 Donated
-                </p>
-              </div>
+              {stats[5].map((tuple, index) => {
+                return (
+                  <>
+                    <div className=" flex flex-row justify-between pb-4">
+                      <div className=" flex flex-row">
+                        <img
+                          src={`/${index + 1}.svg`}
+                          alt="Graphic Elements"
+                          className=" h-10 ml-2 my-auto"
+                        />
+                        <p className=" lato-16-blue pl-2 my-auto">
+                          {tuple.FirstName + " " + tuple.LastName}
+                        </p>
+                      </div>
+                      <p className=" lato-16-blue mr-2 my-auto">
+                        PKR {tuple.amount} Donated
+                      </p>
+                    </div>
+                  </>
+                );
+              })}
             </div>
             <div className="fundraising md:flex flex-col hidden h-full p-3 w-auto mt-2 ml-5 ">
               <div className="flex flex-row items-center justify-between">
@@ -382,39 +355,27 @@ export const empdashboard = () => {
               <div className=" flex flex-row mt-4">
                 <p className=" lato-20-blue font-bold text-left ml-2 mb-2">Top Donors</p>
               </div>
-              <div className=" flex flex-row justify-between items-center pb-4">
-                <div className="flex flex-row items-center">
-                  <img
-                    src="/first.svg"
-                    alt="Graphic Elements"
-                    className=" h-8 ml-2"
-                  />
-                  <p className=" ml-3 lato-16-blue text-left">Quadingle</p>
-                </div>
-                <p className=" lato-14-blue mr-2">PKR 420,000 Donated</p>
-              </div>
-              <div className=" flex flex-row justify-between items-center pb-4">
-                <div className="flex flex-row">
-                  <img
-                    src="/second.svg"
-                    alt="Graphic Elements"
-                    className=" h-8 ml-2"
-                  />
-                  <p className=" ml-3 lato-16-blue text-left">Arslan G</p>
-                </div>
-                <p className=" lato-14-blue mr-2">PKR 410,000 Donated</p>
-              </div>
-              <div className=" flex flex-row justify-between items-center pb-4">
-                <div className="flex flex-row">
-                  <img
-                    src="/third.svg"
-                    alt="Graphic Elements"
-                    className=" h-8 ml-2"
-                  />
-                  <p className=" ml-3 lato-16-blue text-left">Jawad Sagheer</p>
-                </div>
-                <p className=" lato-14-blue mr-2">PKR 400,000 Donated</p>
-              </div>
+              {stats[5].map((tuple, index) => {
+                return (
+                  <>
+                    <div className=" flex flex-row justify-between pb-4">
+                      <div className=" flex flex-row">
+                        <img
+                          src={`/${index + 1}.svg`}
+                          alt="Graphic Elements"
+                          className=" h-8 ml-2"
+                        />
+                        <p className=" ml-3 lato-16-blue text-left">
+                          {tuple.FirstName + " " + tuple.LastName}
+                        </p>
+                      </div>
+                      <p className=" lato-14-blue mr-2">
+                        PKR {tuple.amount} Donated
+                      </p>
+                    </div>
+                  </>
+                );
+              })}
             </div>
             <div className="fundraising sm:max-md:flex flex-col hidden h-full p-3 w-auto mt-2 ml-3 ">
               <div className="flex flex-row items-center justify-between">
@@ -565,39 +526,28 @@ export const empdashboard = () => {
               <div className=" flex flex-row justify-center mt-4">
                 <p className=" lato-20-blue font-bold pb-6 mb-2">Top Donors</p>
               </div>
-              <div className=" flex flex-row justify-between items-center pb-4">
-                <div className="flex flex-row items-center">
-                  <img
-                    src="/first.svg"
-                    alt="Graphic Elements"
-                    className=" h-8 ml-2"
-                  />
-                  <p className=" lato-12-blue ml-2">Quadingle</p>
-                </div>
-                <p className=" lato-12-blue mr-2">PKR 420,000 Donated</p>
-              </div>
-              <div className=" flex flex-row justify-between items-center pb-4">
-                <div className="flex flex-row items-center">
-                  <img
-                    src="/second.svg"
-                    alt="Graphic Elements"
-                    className=" h-8 ml-2"
-                  />
-                  <p className=" lato-12-blue ml-2">Arslan G</p>
-                </div>
-                <p className=" lato-12-blue mr-2">PKR 420,000 Donated</p>
-              </div>
-              <div className=" flex flex-row justify-between items-center pb-4">
-                <div className="flex flex-row items-center">
-                  <img
-                    src="/third.svg"
-                    alt="Graphic Elements"
-                    className=" h-8 ml-2"
-                  />
-                  <p className=" lato-12-blue ml-2">Jawad Ghareeb</p>
-                </div>
-                <p className=" lato-12-blue mr-2">PKR 000,000 Donated</p>
-              </div>
+              {stats[5].map((tuple, index) => {
+                return (
+                  <>
+                    <div className=" flex flex-row justify-between pb-4">
+                      <div className=" flex flex-row items-center">
+                        <img
+                          src={`/${index + 1}.svg`}
+                          alt="Graphic Elements"
+                          className=" h-8 ml-2"
+                        />
+                        <p className=" lato-12-blue ml-2">
+                          {tuple.FirstName + " " + tuple.LastName}
+                        </p>
+                      </div>
+                      <p className=" lato-12-blue mr-2">
+                        PKR {tuple.amount} Donated
+                      </p>
+                    </div>
+                  </>
+                );
+              })}
+
             </div>
             <div className="fundraising max-sm:flex flex-col justify-between hidden p-2 ml-3 mt-4">
               <div className=" flex flex-row justify-between items-center">

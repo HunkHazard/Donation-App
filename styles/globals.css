@@ -1175,6 +1175,13 @@ body {
   font-weight:600;
   line-height: 50px;
 }
+.bebas-40px
+{
+  font-family: "Bebas Neue";
+  font-size: 40px;
+  font-weight:600;
+  line-height: 40px;
+}
 .bebas-70px
 {
   font-family: "Bebas Neue";

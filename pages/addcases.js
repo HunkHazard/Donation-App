@@ -70,24 +70,24 @@ export const Addcases = () => {
           <div className=" flex flex-row w-full justify-between">
             <div className=" flex flex-col w-full mr-1">
               <p className=" lato-26-blue blue-text">Case Title</p>
-              <input placeholder="Enter Case Title" className="input"></input>
+              <input id="pname" placeholder="Enter Case Title" className="input"></input>
             </div>
             <div className=" flex flex-col w-full ml-1">
-              <p className=" lato-26-blue blue-text">School Level</p>
-              <input placeholder="Enter School Level" className="input"></input>
+              <p className=" lato-26-blue blue-text">Institution Name</p>
+              <input id="iname" placeholder="Enter Insitution Name" className="input"></input>
             </div>
           </div>
           <div className=" flex flex-row w-full justify-between">
             <div className=" flex flex-col w-full pt-5 mr-1">
-              <p className=" lato-26-blue blue-text">Reason for Donation</p>
-              <input
-                placeholder="Enter Reason for Donation"
+              <p className=" lato-26-blue blue-text">Address</p>
+              <input id="address"
+                placeholder="Enter Address"
                 className="input"
               ></input>
             </div>
             <div className=" flex flex-col w-full pt-5 ml-1">
               <p className=" lato-26-blue blue-text">Background Info</p>
-              <input
+              <input id="desc"
                 placeholder="Enter Background Information"
                 className="input"
               ></input>
@@ -95,13 +95,14 @@ export const Addcases = () => {
           </div>
           <div className=" flex flex-row w-full justify-between">
             <div className=" flex flex-col pt-5 w-full mr-1">
-              <p className=" lato-26-blue blue-text">Bank</p>
-              <input placeholder="Enter Bank Name" className="input"></input>
+              <p className=" lato-26-blue blue-text">City</p>
+              <input id="city"
+              placeholder="Enter City" className="input"></input>
             </div>
             <div className=" flex flex-col pt-5 w-full ml-1">
-              <p className=" lato-26-blue blue-text">Account Number</p>
-              <input
-                placeholder="Enter Account Number"
+              <p className=" lato-26-blue blue-text">Amount</p>
+              <input id="amount"
+                placeholder="Enter Amount"
                 className="input"
               ></input>
             </div>
@@ -137,24 +138,26 @@ export const Addcases = () => {
           <div className=" flex flex-col mt-4 justify-between">
             <div className=" flex flex-col justify-between">
               <p className=" lato-26-blue blue-text">Case Title</p>
-              <input placeholder="Enter Case Title" className="input"></input>
+              <input id="pname"
+              placeholder="Enter Case Title" className="input"></input>
             </div>
             <div className=" flex flex-col">
-              <p className=" lato-26-blue blue-text pt-5">School Level</p>
-              <input placeholder="Enter School Level" className="input"></input>
+              <p className=" lato-26-blue blue-text pt-5">Institution Name</p>
+              <input id="iname"
+              placeholder="Enter Instituion Name" className="input"></input>
             </div>
           </div>
           <div className=" flex flex-col justify-between">
             <div className=" flex flex-col pt-5">
-              <p className=" lato-26-blue blue-text">Reason for Donation</p>
-              <input
-                placeholder="Enter Reason for Donation"
+              <p className=" lato-26-blue blue-text">Address</p>
+              <input id="address"
+                placeholder="Enter Address"
                 className="input"
               ></input>
             </div>
             <div className=" flex flex-col pt-5">
               <p className=" lato-26-blue blue-text">Background Info</p>
-              <input
+              <input id="desc"
                 placeholder="Enter Background Information"
                 className="input"
               ></input>
@@ -162,13 +165,14 @@ export const Addcases = () => {
           </div>
           <div className=" flex flex-col justify-between">
             <div className=" flex flex-col pt-5">
-              <p className=" lato-26-blue blue-text">Bank</p>
-              <input placeholder="Enter Bank Name" className="input"></input>
+              <p className=" lato-26-blue blue-text">City</p>
+              <input  id="city"
+              placeholder="Enter City" className="input"></input>
             </div>
             <div className=" flex flex-col pt-5">
-              <p className=" lato-26-blue blue-text">Account Number</p>
-              <input
-                placeholder="Enter Account Number"
+              <p className=" lato-26-blue blue-text">Amount</p>
+              <input id="amount"
+                placeholder="Enter Amount"
                 className="input"
               ></input>
             </div>
@@ -204,24 +208,26 @@ export const Addcases = () => {
           <div className=" flex flex-col mt-4 justify-between">
             <div className=" flex flex-col justify-between">
               <p className=" lato-26-blue blue-text">Case Title</p>
-              <input placeholder="Enter Case Title" className="input"></input>
+              <input  id="pname"
+              placeholder="Enter Case Title" className="input"></input>
             </div>
             <div className=" flex flex-col">
-              <p className=" lato-26-blue blue-text pt-5">School Level</p>
-              <input placeholder="Enter School Level" className="input"></input>
+              <p className=" lato-26-blue blue-text pt-5">Institution Name</p>
+              <input id="iname"
+              placeholder="Enter Institution Name" className="input"></input>
             </div>
           </div>
           <div className=" flex flex-col justify-between">
             <div className=" flex flex-col pt-5">
-              <p className=" lato-26-blue blue-text">Reason for Donation</p>
-              <input
-                placeholder="Enter Reason for Donation"
+              <p className=" lato-26-blue blue-text">Address</p>
+              <input id="address"
+                placeholder="Enter Address"
                 className="input"
               ></input>
             </div>
             <div className=" flex flex-col pt-5">
               <p className=" lato-26-blue blue-text">Background Info</p>
-              <input
+              <input id="desc"
                 placeholder="Enter Background Information"
                 className="input"
               ></input>
@@ -229,12 +235,13 @@ export const Addcases = () => {
           </div>
           <div className=" flex flex-col justify-between">
             <div className=" flex flex-col pt-5">
-              <p className=" lato-26-blue blue-text">Bank</p>
-              <input placeholder="Enter Bank Name" className="input"></input>
+              <p className=" lato-26-blue blue-text">City</p>
+              <input  id="city"
+              placeholder="Enter City" className="input"></input>
             </div>
             <div className=" flex flex-col pt-5">
-              <p className=" lato-26-blue blue-text">Account Number</p>
-              <input
+              <p className=" lato-26-blue blue-text">Amount</p>
+              <input id="amount"
                 placeholder="Enter Account Number"
                 className="input"
               ></input>
