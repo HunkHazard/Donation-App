@@ -1,8 +1,52 @@
 import Image from "next/image";
 import heart from "../public/heart.svg";
 import OrangeCase from "../public/OrangeSchool.svg";
+import { useEffect, useState } from "react";
 
 const Cases = ({ text, required, collected, id }) => {
+  const [check, setCheck] = useState(false);
+
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      setCheck(true);
+    }
+  }, []);
+
+  function donate(pid) {
+    if (check == false) {
+      alert("Please Login to Donate");
+      window.location.href = "/login";
+    } else {
+      let token = localStorage.getItem("token");
+      let amount = prompt("Enter Amount to Donate");
+      console.log(amount);
+      if (amount > 0) {
+        fetch("http://localhost:3000/api/donate", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify({
+            pid: pid,
+            amount: amount,
+          }),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.error) {
+              alert(data.error);
+            } else {
+              alert(data.message);
+              window.location.href = "/usertransaction";
+            }
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      }
+    }
+  }
   return (
     <div>
       <div className="lg:flex hidden w-auto h-auto mx-auto mb-8 ">
@@ -19,7 +63,12 @@ const Cases = ({ text, required, collected, id }) => {
               <p>{required}/-</p>
             </div>
             <div className="flex flex-row pb-4 justify-between float-left">
-              <button className=" flex flex-row items-center my-auto pt-[07px] pb-[08px] pl-[26px] pr-[26px] main-accent hover:bg-pink-800">
+              <button
+                onClick={() => {
+                  donate(id);
+                }}
+                className=" flex flex-row items-center my-auto pt-[07px] pb-[08px] pl-[26px] pr-[26px] main-accent hover:bg-pink-800"
+              >
                 Donate Now
                 <Image
                   className="ml-[7px]"
@@ -48,7 +97,12 @@ const Cases = ({ text, required, collected, id }) => {
               <p>{required}/-</p>
             </div>
             <div className="flex flex-row pb-4 justify-between float-left">
-              <button className=" flex flex-row items-center my-auto lato-14-white pt-[07px] pb-[08px] pl-[16px] pr-[16px] main-accent hover:bg-pink-800">
+              <button
+                onClick={() => {
+                  donate(id);
+                }}
+                className=" flex flex-row items-center my-auto lato-14-white pt-[07px] pb-[08px] pl-[16px] pr-[16px] main-accent hover:bg-pink-800"
+              >
                 Donate Now
                 <Image
                   className="ml-[7px]"
@@ -84,7 +138,12 @@ const Cases = ({ text, required, collected, id }) => {
             <p>{required}/-</p>
           </div>
           <div className="flex flex-row pb-4 justify-between float-left">
-            <button className=" flex flex-row items-center my-auto lato-14-white pt-[07px] pb-[08px] pl-[12px] pr-[12px] main-accent hover:bg-pink-800">
+            <button
+              onClick={() => {
+                donate(id);
+              }}
+              className=" flex flex-row items-center my-auto lato-14-white pt-[07px] pb-[08px] pl-[12px] pr-[12px] main-accent hover:bg-pink-800"
+            >
               Donate Now
               <Image
                 className="ml-[7px]"
@@ -119,7 +178,12 @@ const Cases = ({ text, required, collected, id }) => {
             <p>{required}/-</p>
           </div>
           <div className="flex flex-row pb-4 justify-between float-left">
-            <button className=" flex flex-row items-center my-auto lato-14-white pt-[07px] pb-[08px] pl-[12px] pr-[12px] main-accent hover:bg-pink-800">
+            <button
+              onClick={() => {
+                donate(id);
+              }}
+              className=" flex flex-row items-center my-auto lato-14-white pt-[07px] pb-[08px] pl-[12px] pr-[12px] main-accent hover:bg-pink-800"
+            >
               Donate Now
               <Image
                 className="ml-[7px]"
