@@ -253,7 +253,6 @@ export const userdashboard = () => {
                           <div className="bg-gray-300 w-11/12 mx-auto h-[1px]"></div>
                           <p className="secular-14px-upper blue-text pb-2 mt-2">
                             CASE # {index + 1} {item.pname}{" "}
-                            {typeof item.collected}
                           </p>
                           <div className=" flex flex-row pb-1">
                             <Image
@@ -314,7 +313,6 @@ export const userdashboard = () => {
                         <div className="bg-gray-300 w-11/12 mx-auto h-[1px]"></div>
                         <p className="secular-14px-upper blue-text pb-2 mt-2">
                           CASE # {index + 1} {item.pname}{" "}
-                          {typeof item.collected}
                         </p>
                         <div className=" flex flex-row pb-1">
                           <Image
@@ -373,7 +371,6 @@ export const userdashboard = () => {
                         <div className="bg-gray-300 w-11/12 mx-auto h-[1px]"></div>
                         <p className="secular-14px-upper blue-text pb-2 mt-2">
                           CASE # {index + 1} {item.pname}{" "}
-                          {typeof item.collected}
                         </p>
                         <div className=" flex flex-row pb-1">
                           <Image
