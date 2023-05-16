@@ -12,7 +12,8 @@ const Cases = () => {
     }, [])
     return (
         <div>
-            <div className="lg:flex hidden w-auto h-auto mx-auto" >
+            <div className="lg:flex hidden w-auto h-auto mx-auto" data-aos="fade-up" data-aos-easing="linear"
+                data-aos-duration="500">
                 <div className="flex flex-row mx-auto w-4/5 bg-gray-100 items-center ">
                     <div className="h-[160px] w-[160px] aspect-square border border-main rounded-full float-left overflow-hidden">
                     </div>
@@ -41,7 +42,8 @@ const Cases = () => {
                     </div>
                 </div>
             </div>
-            <div className="md:max-lg:flex hidden w-auto h-auto mx-auto" >
+            <div className="md:max-lg:flex hidden w-auto h-auto mx-auto" data-aos="fade-up" data-aos-easing="linear"
+                data-aos-duration="500">
                 <div className="flex flex-row mx-auto w-4/5 bg-gray-100 items-center ">
                     <div className="h-[150px] w-[150px] aspect-square border border-main rounded-full float-left">
                     </div>
@@ -70,7 +72,8 @@ const Cases = () => {
                     </div>
                 </div>
             </div>
-            <div className="sm:max-md:flex hidden w-auto h-auto mx-auto" >
+            <div className="sm:max-md:flex hidden w-auto h-auto mx-auto" data-aos="fade-up" data-aos-easing="linear"
+                data-aos-duration="500">
                 <div className="flex flex-col pt-4 pl-4 pr-4 w-4/5 mx-auto h-auto bg-gray-100 items-cente">
                     <div className="flex flex-row justify-between items-center">
                         <Image className="object-cover"
@@ -103,8 +106,8 @@ const Cases = () => {
                     </div>
                 </div>
             </div>
-            <div className="max-sm:flex hidden w-auto h-auto mx-auto"
-            >
+            <div className="max-sm:flex hidden w-auto h-auto mx-auto" data-aos="fade-up" data-aos-easing="linear"
+                data-aos-duration="500">
                 <div className="flex flex-col pt-4 pl-4 pr-4 w-4/5 mx-auto h-auto bg-gray-100 items-cente">
                     <div className="flex flex-row justify-between items-center">
                         <Image className="object-cover"

@@ -18,10 +18,6 @@
 --
 -- Table structure for table `Admin`
 --
-drop database if exists `Donations`;
-create database Donations;
-use Donations;
-
 
 DROP TABLE IF EXISTS `Admin`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;

@@ -1,168 +1,77 @@
-import Sidebar from "../components/UserSidebar";
-import BurgerDropDown from "@/components/sidebardropdown";
-import logo from "../public/logo.svg";
-import Image from "next/image";
-export const emptransaction = () => {
+import Sidebar from "@/components/Sidebar";
+import { useState, useEffect } from "react";
+
+export const usertransaction = () => {
+  const [transHistory, setTransHistory] = useState([]);
+  const [username, setUsername] = useState("");
+  useEffect(() => {
+    if (!localStorage.getItem("token")) {
+      window.location.href = "/login";
+    }
+
+    fetch("http://localhost:3000/api/transHistory", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + localStorage.getItem("token"),
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setUsername(data[0].FirstName + " " + data[0].LastName);
+        setTransHistory(data);
+      })
+      .catch((err) => console.log(err));
+  }, []);
+
+  if (!username) {
+    return null;
+  }
+
   return (
-    <div >
-      <div className="main lg:flex hidden">
-        <div className=" w-11/12 h-auto lg:flex hidden">
-          <Sidebar></Sidebar>
-          <div className=" statsdiv ml-10 w-11/12 h-auto overflow-y-scroll">
-            <select name="timesort" className="timesort">
-              <option>This Month</option>
-              <option>This Week</option>
-              <option>This Year</option>
-            </select>
-            <div className="donationhistory mt-2 flex flex-col">
-              <p className="lato-25-blue mt-2 ml-4">Donation History</p>
-              <table className="table ">
-                <thead>
+    <div className=" main">
+      <Sidebar username={username}></Sidebar>
+      <div className=" w-full h-auto lg:flex hidden">
+        <div className=" statsdiv overflow-y-scroll ml-10 w-11/12 h-auto">
+          <select name="timesort" className="timesort">
+            <option>This Month</option>
+            <option>This Week</option>
+            <option>This Year</option>
+          </select>
+          <div className="donationhistory mt-2 flex flex-col ">
+            <p className="lato-25-blue font-bold mt-2 ml-4">Donation History</p>
+            <table className="table ">
+              <thead>
+                <tr className="tableheadings">
+                  <th>Name</th>
+                  <th>Institution</th>
+                  <th>Date</th>
+                  <th>Amount</th>
+                </tr>
+              </thead>
+              <tbody>
+                {transHistory[1].length === 0 ? (
                   <tr className="tableheadings">
-                    <th>Name</th>
-                    <th>Type</th>
-                    <th>Date</th>
-                    <th>Amount</th>
+                    <td>No Transactions</td>
                   </tr>
-                </thead>
-                <tbody>
-                  <tr className="tablerows">
-                    <td>Case ka title goes here</td>
-                    <td>Elementary School</td>
-                    <td>21 Jun 2023</td>
-                    <td>PKR 10,000</td>
-                    <td>
-
-                    </td>
-                  </tr>
-                  <tr className="tablerows">
-                    <td>Case ka title goes here</td>
-                    <td>Elementary School</td>
-                    <td>21 Jun 2023</td>
-                    <td>PKR 10,000</td>
-                    <td>
-                    </td>
-                  </tr>
-                  <tr className="tablerows">
-                    <td>Case ka title goes here</td>
-                    <td>Elementary School</td>
-                    <td>21 Jun 2023</td>
-                    <td>PKR 10,000</td>
-                    <td>
-                    </td>
-                  </tr>
-                  <tr className="tablerows">
-                    <td>Case ka title goes here</td>
-                    <td>Elementary School</td>
-                    <td>21 Jun 2023</td>
-                    <td>PKR 10,000</td>
-                    <td>
-                    </td>
-                  </tr>
-                  <tr className="tablerows">
-                    <td>Case ka title goes here</td>
-                    <td>Elementary School</td>
-                    <td>21 Jun 2023</td>
-                    <td>PKR 10,000</td>
-                    <td>
-                    </td>
-                  </tr>
-                  <tr className="tablerows">
-                    <td>Case ka title goes here</td>
-                    <td>Elementary School</td>
-                    <td>21 Jun 2023</td>
-                    <td>PKR 10,000</td>
-                    <td>
-
-                    </td>
-                  </tr>
-                  <tr className="tablerows">
-                    <td>Case ka title goes here</td>
-                    <td>Elementary School</td>
-                    <td>21 Jun 2023</td>
-                    <td>PKR 10,000</td>
-                    <td>
-
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="main2  lg:hidden flex">
-        <div className=" w-screen flex-col h-auto lg:hidden flex">
-          <div className="flex flex-row w-screen p-5 mb-4 h-14 blue-bg items-center justify-between">
-            <Image
-              src={logo}
-              width={45}
-              height={45}
-              alt="Logo"
-            />
-            <BurgerDropDown />
-          </div>
-          <div className=" statsdiv ml-10 w-11/12 h-auto overflow-y-scroll">
-            <select name="timesort" className="timesort">
-              <option>This Month</option>
-              <option>This Week</option>
-              <option>This Year</option>
-            </select>
-            <div className="donationhistory mt-2 p-2 flex flex-col">
-              <p className="lato-20-blue font-bold mt-2 ml-2">Donation History</p>
-              <table className="table ">
-                <thead>
-                  <tr className="tableheadings">
-                    <th>Name</th>
-                    <th>Type</th>
-                    <th>Date</th>
-                    <th>Amount</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr className="tablerows secular-14px-upper">
-                    <td>Case ka title goes here</td>
-                    <td>Elementary School</td>
-                    <td>21 Jun 2023</td>
-                    <td>PKR 10,000</td>
-                    <td>
-                    </td>
-                  </tr>
-                  <tr className="tablerows secular-14px-upper">
-                    <td>Case ka title goes here</td>
-                    <td>Elementary School</td>
-                    <td>21 Jun 2023</td>
-                    <td>PKR 10,000</td>
-                    <td>
-                    </td>
-                  </tr>
-                  <tr className="tablerows secular-14px-upper">
-                    <td>Case ka title goes here</td>
-                    <td>Elementary School</td>
-                    <td>21 Jun 2023</td>
-                    <td>PKR 10,000</td>
-                    <td>
-                    </td>
-                  </tr>
-                  <tr className="tablerows secular-14px-upper">
-                    <td>Case ka title goes here</td>
-                    <td>Elementary School</td>
-                    <td>21 Jun 2023</td>
-                    <td>PKR 10,000</td>
-                    <td>
-                    </td>
-                  </tr>
-                  <tr className="tablerows secular-14px-upper">
-                    <td>Case ka title goes here</td>
-                    <td>Elementary School</td>
-                    <td>21 Jun 2023</td>
-                    <td>PKR 10,000</td>
-                    <td>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+                ) : (
+                  transHistory[1].map((tuple, index) => {
+                    return (
+                      <tr className="tablerows">
+                        <td>{tuple.project}</td>
+                        <td>{tuple.institution}</td>
+                        <td>{tuple.date}</td>
+                        <td>{tuple.amount}</td>
+                        <td>
+                          <a>VIEW RECEIPT</a>
+                        </td>
+                      </tr>
+                    );
+                  })
+                )}
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
@@ -170,4 +79,4 @@ export const emptransaction = () => {
   );
 };
 
-export default emptransaction;
+export default usertransaction;
