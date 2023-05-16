@@ -1,29 +1,43 @@
-
-// unconfirmed
-
-import Link from "next/link";
-import Sidebar from "./empsidebar";
+// import Sidebar from "./empsidebar";
+import Sidebar from "@/components/Sidebar";
 import logo from "../public/logo.svg";
 import Image from "next/image";
 import BurgerDropDown from "@/components/empsidebardropdown";
+import { useEffect, useState } from "react";
 
 export const Addcases = () => {
-  {
-    const pname = document.getElementById("pname").value;
-    const iname = document.getElementById("iname").value;
-    const desc = document.getElementById("desc").value;
-    const amount = document.getElementById("amount").value;
-    const address = document.getElementById("address").value;
-    const city = document.getElementById("city").value;
-    const province = document.getElementById("province").value;
+  const [username, setUsername] = useState("");
+
+  useEffect(() => {
+    if (localStorage.getItem("admintoken") == null) {
+      window.location.href = "/admin";
+    }
+
+    fetch("http://localhost:3000/api/admindash", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("admintoken")}`,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data.results.FirstName);
+        const username = data.results.FirstName + " " + data.results.LastName;
+        setUsername(username);
+      });
+  }, []);
+
+  function registerCase(e) {
+    // e.preventDefault();
+
     const payload = {
-      pname: pname,
-      iname: iname,
-      desc: desc,
-      amount: amount,
-      address: address,
-      city: city,
-      province: province,
+      pname: document.querySelector("#pname").value,
+      iname: document.querySelector("#iname").value,
+      amount: document.querySelector("#amount").value,
+      desc: document.querySelector("#desc").value,
+      address: document.querySelector("#address").value,
+      province: document.querySelector("#province").value,
     };
 
     console.log(payload);
@@ -49,13 +63,17 @@ export const Addcases = () => {
       // window.location.href = "/login";
     }
 
+    fetchRes(payload);
+  }
 
+  if (!username) {
+    return null;
   }
 
   return (
     <div className=" main flex h-auto max-md:h-screen">
       <div className=" md:flex hidden">
-        <Sidebar></Sidebar>
+        <Sidebar username={username} />
       </div>
       <div className=" md:flex hidden w-3/5 mx-auto my-auto flex-col max-md:mt-0 h-auto">
         <div className="mx-auto pt-5">
@@ -70,24 +88,34 @@ export const Addcases = () => {
           <div className=" flex flex-row w-full justify-between">
             <div className=" flex flex-col w-full mr-1">
               <p className=" lato-26-blue blue-text">Case Title</p>
-              <input id="pname" placeholder="Enter Case Title" className="input"></input>
+              <input
+                id="pname"
+                placeholder="Enter Case Title"
+                className="input"
+              ></input>
             </div>
             <div className=" flex flex-col w-full ml-1">
               <p className=" lato-26-blue blue-text">Institution Name</p>
-              <input id="iname" placeholder="Enter Insitution Name" className="input"></input>
+              <input
+                id="iname"
+                placeholder="Enter Insitution Name"
+                className="input"
+              ></input>
             </div>
           </div>
           <div className=" flex flex-row w-full justify-between">
             <div className=" flex flex-col w-full pt-5 mr-1">
               <p className=" lato-26-blue blue-text">Address</p>
-              <input id="address"
+              <input
+                id="address"
                 placeholder="Enter Address"
                 className="input"
               ></input>
             </div>
             <div className=" flex flex-col w-full pt-5 ml-1">
               <p className=" lato-26-blue blue-text">Background Info</p>
-              <input id="desc"
+              <input
+                id="desc"
                 placeholder="Enter Background Information"
                 className="input"
               ></input>
@@ -95,21 +123,28 @@ export const Addcases = () => {
           </div>
           <div className=" flex flex-row w-full justify-between">
             <div className=" flex flex-col pt-5 w-full mr-1">
-              <p className=" lato-26-blue blue-text">City</p>
-              <input id="city"
-              placeholder="Enter City" className="input"></input>
+              <p className=" lato-26-blue blue-text">Province</p>
+              <input
+                id="province"
+                placeholder="Enter Province"
+                className="input"
+              ></input>
             </div>
             <div className=" flex flex-col pt-5 w-full ml-1">
               <p className=" lato-26-blue blue-text">Amount</p>
-              <input id="amount"
+              <input
+                id="amount"
                 placeholder="Enter Amount"
                 className="input"
               ></input>
             </div>
           </div>
         </div>
-        <div >
-          <button className="flex flex-row items-center my-auto mx-auto pt-[05px] pb-[05px] pl-[16px] pr-[16px] border main-accent-border rounded-full lato-16-main main-text hover:bg-pink-800 hover:text-white ">
+        <div>
+          <button
+            onClick={registerCase}
+            className="flex flex-row items-center my-auto mx-auto pt-[05px] pb-[05px] pl-[16px] pr-[16px] border main-accent-border rounded-full lato-16-main main-text hover:bg-pink-800 hover:text-white "
+          >
             Add Case
           </button>
         </div>
@@ -117,12 +152,7 @@ export const Addcases = () => {
       <div className=" sm:max-md:w-full mx-auto my-auto sm:max-md:flex hidden max-md:mt-0 flex-col">
         <div className="lg:hidden flex">
           <div className="flex flex-row w-screen p-5 mb-4 h-14 blue-bg items-center justify-between">
-            <Image
-              src={logo}
-              width={45}
-              height={45}
-              alt="Logo"
-            />
+            <Image src={logo} width={45} height={45} alt="Logo" />
             <BurgerDropDown />
           </div>
         </div>
@@ -138,26 +168,34 @@ export const Addcases = () => {
           <div className=" flex flex-col mt-4 justify-between">
             <div className=" flex flex-col justify-between">
               <p className=" lato-26-blue blue-text">Case Title</p>
-              <input id="pname"
-              placeholder="Enter Case Title" className="input"></input>
+              <input
+                id="pname"
+                placeholder="Enter Case Title"
+                className="input"
+              ></input>
             </div>
             <div className=" flex flex-col">
               <p className=" lato-26-blue blue-text pt-5">Institution Name</p>
-              <input id="iname"
-              placeholder="Enter Instituion Name" className="input"></input>
+              <input
+                id="iname"
+                placeholder="Enter Instituion Name"
+                className="input"
+              ></input>
             </div>
           </div>
           <div className=" flex flex-col justify-between">
             <div className=" flex flex-col pt-5">
               <p className=" lato-26-blue blue-text">Address</p>
-              <input id="address"
+              <input
+                id="address"
                 placeholder="Enter Address"
                 className="input"
               ></input>
             </div>
             <div className=" flex flex-col pt-5">
               <p className=" lato-26-blue blue-text">Background Info</p>
-              <input id="desc"
+              <input
+                id="desc"
                 placeholder="Enter Background Information"
                 className="input"
               ></input>
@@ -165,21 +203,28 @@ export const Addcases = () => {
           </div>
           <div className=" flex flex-col justify-between">
             <div className=" flex flex-col pt-5">
-              <p className=" lato-26-blue blue-text">City</p>
-              <input  id="city"
-              placeholder="Enter City" className="input"></input>
+              <p className=" lato-26-blue blue-text">Province</p>
+              <input
+                id="province"
+                placeholder="Enter Province"
+                className="input"
+              ></input>
             </div>
             <div className=" flex flex-col pt-5">
               <p className=" lato-26-blue blue-text">Amount</p>
-              <input id="amount"
+              <input
+                id="amount"
                 placeholder="Enter Amount"
                 className="input"
               ></input>
             </div>
           </div>
         </div>
-        <div >
-          <button className="flex flex-row mt-6 mb-6 items-center my-auto mx-auto pt-[05px] pb-[05px] pl-[16px] pr-[16px] border main-accent-border rounded-full lato-16-main main-text hover:bg-pink-800 hover:text-white ">
+        <div>
+          <button
+            onSubmit={registerCase}
+            className="flex flex-row mt-6 mb-6 items-center my-auto mx-auto pt-[05px] pb-[05px] pl-[16px] pr-[16px] border main-accent-border rounded-full lato-16-main main-text hover:bg-pink-800 hover:text-white "
+          >
             Add Case
           </button>
         </div>
@@ -187,12 +232,7 @@ export const Addcases = () => {
       <div className=" max-sm:flex w-full mx-auto my-auto hidden max-md:mt-0 flex-col">
         <div className="lg:hidden flex">
           <div className="flex flex-row w-screen p-5 mb-4 h-14 blue-bg items-center justify-between">
-            <Image
-              src={logo}
-              width={45}
-              height={45}
-              alt="Logo"
-            />
+            <Image src={logo} width={45} height={45} alt="Logo" />
             <BurgerDropDown />
           </div>
         </div>
@@ -208,26 +248,34 @@ export const Addcases = () => {
           <div className=" flex flex-col mt-4 justify-between">
             <div className=" flex flex-col justify-between">
               <p className=" lato-26-blue blue-text">Case Title</p>
-              <input  id="pname"
-              placeholder="Enter Case Title" className="input"></input>
+              <input
+                id="pname"
+                placeholder="Enter Case Title"
+                className="input"
+              ></input>
             </div>
             <div className=" flex flex-col">
               <p className=" lato-26-blue blue-text pt-5">Institution Name</p>
-              <input id="iname"
-              placeholder="Enter Institution Name" className="input"></input>
+              <input
+                id="iname"
+                placeholder="Enter Institution Name"
+                className="input"
+              ></input>
             </div>
           </div>
           <div className=" flex flex-col justify-between">
             <div className=" flex flex-col pt-5">
               <p className=" lato-26-blue blue-text">Address</p>
-              <input id="address"
+              <input
+                id="address"
                 placeholder="Enter Address"
                 className="input"
               ></input>
             </div>
             <div className=" flex flex-col pt-5">
               <p className=" lato-26-blue blue-text">Background Info</p>
-              <input id="desc"
+              <input
+                id="desc"
                 placeholder="Enter Background Information"
                 className="input"
               ></input>
@@ -235,26 +283,32 @@ export const Addcases = () => {
           </div>
           <div className=" flex flex-col justify-between">
             <div className=" flex flex-col pt-5">
-              <p className=" lato-26-blue blue-text">City</p>
-              <input  id="city"
-              placeholder="Enter City" className="input"></input>
+              <p className=" lato-26-blue blue-text">Province</p>
+              <input
+                id="province"
+                placeholder="Enter Province"
+                className="input"
+              ></input>
             </div>
             <div className=" flex flex-col pt-5">
               <p className=" lato-26-blue blue-text">Amount</p>
-              <input id="amount"
+              <input
+                id="amount"
                 placeholder="Enter Account Number"
                 className="input"
               ></input>
             </div>
           </div>
         </div>
-        <div >
-          <button className="flex flex-row mt-6 mb-6 items-center my-auto mx-auto pt-[05px] pb-[05px] pl-[16px] pr-[16px] border main-accent-border rounded-full lato-16-main main-text hover:bg-pink-800 hover:text-white ">
+        <div onClick={registerCase}>
+          <button
+            onSubmit={registerCase}
+            className="flex flex-row mt-6 mb-6 items-center my-auto mx-auto pt-[05px] pb-[05px] pl-[16px] pr-[16px] border main-accent-border rounded-full lato-16-main main-text hover:bg-pink-800 hover:text-white "
+          >
             Add Case
           </button>
         </div>
       </div>
-
     </div>
   );
 };
