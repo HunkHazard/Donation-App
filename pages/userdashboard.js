@@ -74,20 +74,14 @@ export const userdashboard = () => {
   return (
     <div className="main max-sm:h-max">
       <div className=" lg:flex hidden">
-        <Sidebar></Sidebar>
+        <Sidebar username={username} />
       </div>
       <div className="statsdiv max-lg:ml-0 max-lg:mt-0 max-lg:items-center  flex flex-col w-full">
         <div className="max-lg:flex hidden">
           <div className=" flex flex-row w-screen p-5 mb-4 h-14 blue-bg items-center justify-between">
-            <Image
-              src={logo}
-              width={45}
-              height={45}
-              alt="Logo"
-            />
+            <Image src={logo} width={45} height={45} alt="Logo" />
             <BurgerDropDown />
           </div>
-
         </div>
         <select
           name="timesort"
@@ -105,7 +99,8 @@ export const userdashboard = () => {
                   Total Donation
                 </p>
                 <p className="bebas-50px main-text text-5xl text-base/8 pb-6 ml-6 whitespace-nowrap">
-                  <r className="bebas-32">PKR</r> <br></br>{stats[0].TotalDonatedAmount}
+                  <r className="bebas-32">PKR</r> <br></br>
+                  {stats[0].TotalDonatedAmount}
                 </p>
               </div>
               <div className="totaldonation pt-2 pb-4 pr-6 pl-1">
@@ -113,7 +108,8 @@ export const userdashboard = () => {
                   Donation Today
                 </p>
                 <p className="bebas-50px main-text text-5xl text-base/8 pb-6 ml-6 whitespace-nowrap">
-                  <r className="bebas-32">PKR</r> <br></br>{stats[1].TotalToday}
+                  <r className="bebas-32">PKR</r> <br></br>
+                  {stats[1].TotalToday}
                 </p>
               </div>
             </div>
@@ -123,7 +119,8 @@ export const userdashboard = () => {
                   Total Donation
                 </p>
                 <p className="bebas-50px main-text text-5xl text-base/8 pb-6 ml-6 whitespace-nowrap">
-                  <r className="bebas-32">PKR</r> <br></br>{stats[0].TotalDonatedAmount}
+                  <r className="bebas-32">PKR</r> <br></br>
+                  {stats[0].TotalDonatedAmount}
                 </p>
               </div>
               <div className="totaldonation1 pt-2 pb-2 pr-4 flex flex-col justify-between">
@@ -131,7 +128,8 @@ export const userdashboard = () => {
                   Donation Today
                 </p>
                 <p className="bebas-50px main-text text-5xl text-base/8 pb-6 ml-6 whitespace-nowrap">
-                  <r className="bebas-32">PKR</r> <br></br>{stats[1].TotalToday}
+                  <r className="bebas-32">PKR</r> <br></br>
+                  {stats[1].TotalToday}
                 </p>
               </div>
             </div>
@@ -141,7 +139,8 @@ export const userdashboard = () => {
                   Total Donation
                 </p>
                 <p className="bebas-50px main-text text-5xl text-base/8 pb-6 whitespace-nowrap">
-                  <r className="bebas-32">PKR</r> <br></br>{stats[0].TotalDonatedAmount}
+                  <r className="bebas-32">PKR</r> <br></br>
+                  {stats[0].TotalDonatedAmount}
                 </p>
               </div>
               <div className="totaldonation w-max p-5 flex flex-col">
@@ -149,7 +148,8 @@ export const userdashboard = () => {
                   Donation Today
                 </p>
                 <p className="bebas-50px main-text text-5xl text-base/8 pb-6 whitespace-nowrap">
-                  <r className="bebas-32">PKR</r> <br></br>{stats[1].TotalToday}
+                  <r className="bebas-32">PKR</r> <br></br>
+                  {stats[1].TotalToday}
                 </p>
               </div>
             </div>
@@ -181,7 +181,9 @@ export const userdashboard = () => {
             </div>
             <div className=" totaldonation mt-2 sm:max-md:flex flex-col justify-between hidden h-full">
               <div className=" flex flex-row mt-4">
-                <p className=" lato-20-blue font-bold text-left ml-2">Top Donors</p>
+                <p className=" lato-20-blue font-bold text-left ml-2">
+                  Top Donors
+                </p>
               </div>
               {stats[5].map((tuple, index) => {
                 return (
@@ -230,11 +232,12 @@ export const userdashboard = () => {
                   </>
                 );
               })}
-
             </div>
             <div className="fundraising max-sm:flex flex-col justify-between hidden p-2 ml-2 mt-4">
               <div className=" flex flex-row justify-between items-center">
-                <p className="lato-16-blue font-bold pr-2 pt-2 pl-1">Your fundraising</p>
+                <p className="lato-16-blue font-bold pr-2 pt-2 pl-1">
+                  Your fundraising
+                </p>
                 <img
                   src="/arrow-small-right.svg"
                   alt="Graphic Elements"
@@ -274,7 +277,8 @@ export const userdashboard = () => {
                               ></div>
                             </div>
                             <p className="lato-12-blue font-semibold ml-1">
-                              {parseInt((item.collected / item.required) * 100)}%
+                              {parseInt((item.collected / item.required) * 100)}
+                              %
                             </p>
                           </div>
                           <div className=" flex flex-row pt-1">
@@ -293,7 +297,8 @@ export const userdashboard = () => {
           <div className="fundraising md:flex flex-col hidden h-full p-3 w-full ml-2">
             <div className=" flex flex-row items-center justify-between">
               <p className="lato-25-blue font-bold">Your fundraising</p>
-              <Image className="w-6 h-auto object-cover my-auto"
+              <Image
+                className="w-6 h-auto object-cover my-auto"
                 src={arrow}
                 width={287}
                 height={349}
@@ -351,7 +356,8 @@ export const userdashboard = () => {
           <div className="fundraising sm:max-md:flex flex-col justify-between hidden h-full w-max p-2 ml-2">
             <div className=" flex flex-row items-center justify-between">
               <p className="lato-20-blue font-bold">Your fundraising</p>
-              <Image className="w-6 h-auto object-cover my-auto"
+              <Image
+                className="w-6 h-auto object-cover my-auto"
                 src={arrow}
                 width={287}
                 height={349}
