@@ -4,14 +4,16 @@ import { Menu, Transition } from '@headlessui/react'
 import burgernav from "../public/burgernavlight.svg";
 import Image from "next/image"
 import Link from 'next/link';
-import Signupmodal from './signupmodal';
-import Admin from './LoginAdmin';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
 export default function BurgerDropDown() {
+  function logout() {
+    localStorage.removeItem("token");
+    window.location.href = "/login";
+  }
   return (
     <>
       <Menu as="div" className="relative inline-block text-left">
@@ -66,7 +68,7 @@ export default function BurgerDropDown() {
               <Menu.Item>
                 {({ active }) => (
                   <Link
-                    href="#"
+                    href="/insights"
                     className={classNames(
                       active ? 'bg-gray-100 text-gray-900' : 'text-white',
                       'block px-4 py-2 text-sm'
@@ -81,7 +83,7 @@ export default function BurgerDropDown() {
               <Menu.Item>
                 {({ active }) => (
                   <Link
-                    href="#"
+                    href="/userdashboard"
                     className={classNames(
                       active ? 'bg-gray-100 text-gray-900' : 'text-white',
                       'block px-4 py-2 text-sm'
@@ -91,64 +93,40 @@ export default function BurgerDropDown() {
                   </Link>
                 )}
               </Menu.Item>
-              <Menu.Item>
-                {({ active }) => (
-                  <label
-                    className={classNames(
-                      active ? 'bg-gray-100 text-gray-900' : 'text-white',
-                      'block px-4 py-2 text-sm cursor-pointer'
-                    )}
-                    htmlFor='sign-shameekh'
-                  >
-                    Employee Sign in
-                  </label>
-                )}
-              </Menu.Item>
             </div>
             <div className="py-1  lato-16-white">
               <Menu.Item>
                 {({ active }) => (
-                  <label
-                    htmlFor='signupmodal'
+                  <Link
+                    href="/signup"
                     className={classNames(
                       active ? 'bg-gray-100 text-gray-900' : 'text-white',
                       'block px-4 py-2 text-sm'
                     )}
                   >
                     Create Account
-                  </label>
+                  </Link>
                 )}
               </Menu.Item>
             </div>
             <div className="py-1  lato-16-white">
               <Menu.Item>
                 {({ active }) => (
-                  <Link
-                    href="#"
+                  <button
+                    onClick={logout}
                     className={classNames(
                       active ? 'bg-gray-100 text-gray-900' : 'text-white',
                       'block px-4 py-2 text-sm'
                     )}
                   >
                     Sign Out
-                  </Link>
+                  </button>
                 )}
               </Menu.Item>
             </div>
           </Menu.Items>
         </Transition>
       </Menu>
-      <>
-        <input type="checkbox" id="sign-shameekh" className="modal-toggle" />
-        <label htmlFor="sign-shameekh" className="modal cursor-pointer">
-          <label className="modal-box w-3/12 h-[26.3rem] rounded-[20px] max-w-5xl " htmlFor="">
-            <Admin />
-          </label>
-        </label>
-      </>
-      <>
-        <Signupmodal />
-      </>
     </>
   )
 }

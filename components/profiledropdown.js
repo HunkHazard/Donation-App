@@ -5,7 +5,6 @@ import profile from "../public/profile.svg";
 import Image from "next/image"
 import React from 'react';
 import 'reactjs-popup/dist/index.css';
-import Admin from '@/components/LoginAdmin';
 import Signupmodal from './signupmodal';
 
 function classNames(...classes) {
@@ -13,6 +12,10 @@ function classNames(...classes) {
 }
 
 export default function NavDropDown() {
+  function logout() {
+    localStorage.removeItem("token");
+    window.location.href = "/login";
+  }
 
   return (
     <>
@@ -52,19 +55,6 @@ export default function NavDropDown() {
                   </a>
                 )}
               </Menu.Item>
-              <Menu.Item>
-                {({ active }) => (
-                  <label
-                    className={classNames(
-                      active ? 'bg-gray-100 text-gray-900' : 'text-white',
-                      'block px-4 py-2 text-sm cursor-pointer'
-                    )}
-                    htmlFor='sign-shameekh'
-                  >
-                    Employee Sign in
-                  </label>
-                )}
-              </Menu.Item>
             </div>
             <div className="py-1  lato-16-white">
               <Menu.Item>
@@ -84,15 +74,14 @@ export default function NavDropDown() {
             <div className="py-1  lato-16-white">
               <Menu.Item>
                 {({ active }) => (
-                  <a
-                    href="#"
+                  <button onClick={logout}
                     className={classNames(
                       active ? 'bg-gray-100 text-gray-900' : 'text-white',
                       'block px-4 py-2 text-sm'
                     )}
                   >
                     Sign Out
-                  </a>
+                  </button>
                 )}
               </Menu.Item>
             </div>
@@ -100,14 +89,6 @@ export default function NavDropDown() {
         </Transition>
 
       </Menu>
-      <>
-        <input type="checkbox" id="sign-shameekh" className="modal-toggle" />
-        <label htmlFor="sign-shameekh" className="modal cursor-pointer">
-          <label className="modal-box w-[22rem] h-[25.5rem] rounded-[20px] max-w-5xl " htmlFor="">
-            <Admin />
-          </label>
-        </label>
-      </>
       <>
         <Signupmodal />
       </>

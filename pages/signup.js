@@ -39,7 +39,6 @@ export const signup = () => {
         fetchRes(payload);
     }
     return (
-
         <div className="bigdiv">
             <div className="container1">
                 <div className="loginitems">
@@ -98,7 +97,6 @@ export const signup = () => {
                 </div>
             </div>
         </div>
-
     )
 }
 
