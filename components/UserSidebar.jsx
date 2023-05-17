@@ -3,7 +3,7 @@ import { useRouter } from "next/router"
 export const usersidebar = ({ username }) => {
   function logout() {
     localStorage.removeItem("token");
-    window.location.href = "/login";
+    window.location.href = "/";
   }
   const router = useRouter();
   const isActiveLink = (href) => {

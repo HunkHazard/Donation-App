@@ -29,6 +29,8 @@ export const signup = () => {
             const parsedRes = await res.json();
             if (res.status == 200) {
                 alert("Sign-Up Successful!!");
+                localStorage.removeItem("token");
+                localStorage.removeItem("admintoken");
                 router.push("/login");
             } else {
                 const { message } = parsedRes;
