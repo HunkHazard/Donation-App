@@ -3,7 +3,8 @@ import { useRouter } from "next/router";
 
 const Sidebar = ({ username }) => {
   function logout() {
-    localStorage.removeItem("token");
+    
+    localStorage.removeItem("admintoken");
     window.location.href = "/";
   }
   const router = useRouter();
@@ -35,8 +36,7 @@ const Sidebar = ({ username }) => {
       </Link>
       <Link
         href="/emptransaction"
-        className={`link w-full ${isActiveLink("/emptransaction")}`}
-      >
+        className={`link w-full ${isActiveLink("/emptransaction")}`}>
         <div className="w-max rounded-full hover:bg-gray-600 flex flex-row justify-start p-[20px]">
           <img src="/coins.svg" alt="Graphic Elements" />
           <p className="lato-16-white ml-4">Transaction History</p>

@@ -3,7 +3,7 @@ import BurgerDropDown from "@/components/sidebardropdown";
 import logo from "../public/logo.svg";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-export const emptransaction = () => {
+export const usertransaction = () => {
   const [history, setHistory] = useState([]);
   const [username, setUsername] = useState("");
   useEffect(() => {
@@ -149,4 +149,4 @@ export const emptransaction = () => {
   );
 };
 
-export default emptransaction;
+export default usertransaction;

@@ -1,13 +1,40 @@
-import Sidebar from "./empsidebar";
+import Sidebar from "../components/Sidebar";
 import BurgerDropDown from "@/components/empsidebardropdown";
 import logo from "../public/logo.svg";
 import Image from "next/image";
+import { useState, useEffect } from "react";
 export const emptransaction = () => {
+  const [history, setHistory] = useState([]);
+  const [username, setUsername] = useState("");
+  useEffect(() => {
+    if (localStorage.getItem("admintoken") == null) {
+      window.location.href = "http://localhost:3000/admin";
+    }
+
+    fetch("http://localhost:3000/api/totalDonations", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("admintoken")}`,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        // console.log(data);
+        const username = data[0].FirstName + " " + data[0].LastName;
+        setUsername(username);
+        setHistory(data[1]);
+      });
+  }, []);
+
+  if (!username) {
+    return null;
+  }
   return (
     <div>
       <div className="main lg:flex hidden">
         <div className=" w-11/12 h-auto lg:flex hidden">
-          <Sidebar></Sidebar>
+          <Sidebar username={username}></Sidebar>
           <div className=" statsdiv ml-10 w-11/12 h-auto overflow-y-scroll">
             <div className="donationhistory mt-2 flex flex-col">
               <p className="lato-25-blue mt-2 ml-4">Transaction History</p>
@@ -15,61 +42,30 @@ export const emptransaction = () => {
                 <thead>
                   <tr className="tableheadings">
                     <th>Name</th>
-                    <th>Type</th>
-                    <th>Date</th>
-                    <th>Amount</th>
+                    <th>Institution</th>
+                    <th>Amount Donated</th>
+                    <th>Date of Donation</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr className="tablerows">
-                    <td>Case ka title goes here</td>
-                    <td>Elementary School</td>
-                    <td>21 Jun 2023</td>
-                    <td>PKR 10,000</td>
-                    <td></td>
-                  </tr>
-                  <tr className="tablerows">
-                    <td>Case ka title goes here</td>
-                    <td>Elementary School</td>
-                    <td>21 Jun 2023</td>
-                    <td>PKR 10,000</td>
-                    <td></td>
-                  </tr>
-                  <tr className="tablerows">
-                    <td>Case ka title goes here</td>
-                    <td>Elementary School</td>
-                    <td>21 Jun 2023</td>
-                    <td>PKR 10,000</td>
-                    <td></td>
-                  </tr>
-                  <tr className="tablerows">
-                    <td>Case ka title goes here</td>
-                    <td>Elementary School</td>
-                    <td>21 Jun 2023</td>
-                    <td>PKR 10,000</td>
-                    <td></td>
-                  </tr>
-                  <tr className="tablerows">
-                    <td>Case ka title goes here</td>
-                    <td>Elementary School</td>
-                    <td>21 Jun 2023</td>
-                    <td>PKR 10,000</td>
-                    <td></td>
-                  </tr>
-                  <tr className="tablerows">
-                    <td>Case ka title goes here</td>
-                    <td>Elementary School</td>
-                    <td>21 Jun 2023</td>
-                    <td>PKR 10,000</td>
-                    <td></td>
-                  </tr>
-                  <tr className="tablerows">
-                    <td>Case ka title goes here</td>
-                    <td>Elementary School</td>
-                    <td>21 Jun 2023</td>
-                    <td>PKR 10,000</td>
-                    <td></td>
-                  </tr>
+                  {history.map((item, index) => {
+                    const date = new Date(item.date);
+                    const formattedDate = date.toLocaleDateString("en-US", {
+                      day: "numeric",
+                      month: "short",
+                      year: "numeric",
+                    });
+                    item.date = formattedDate;
+
+                    return (
+                      <tr className="tablerows" key={index}>
+                        <td>{item.fname} {item.lname}</td>
+                        <td>{item.institution}</td>
+                        <td>{item.amount}</td>
+                        <td>{item.date}</td>
+                      </tr>
+                    );
+                  })}
                 </tbody>
               </table>
             </div>
@@ -96,47 +92,30 @@ export const emptransaction = () => {
                 <thead>
                   <tr className="tableheadings">
                     <th>Name</th>
-                    <th>Type</th>
-                    <th>Date</th>
-                    <th>Amount</th>
+                    <th>Institution</th>
+                    <th>Amount Donated</th>
+                    <th>Date of Donation</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr className="tablerows secular-14px-upper">
-                    <td>Case ka title goes here</td>
-                    <td>Elementary School</td>
-                    <td>21 Jun 2023</td>
-                    <td>PKR 10,000</td>
-                    <td></td>
-                  </tr>
-                  <tr className="tablerows secular-14px-upper">
-                    <td>Case ka title goes here</td>
-                    <td>Elementary School</td>
-                    <td>21 Jun 2023</td>
-                    <td>PKR 10,000</td>
-                    <td></td>
-                  </tr>
-                  <tr className="tablerows secular-14px-upper">
-                    <td>Case ka title goes here</td>
-                    <td>Elementary School</td>
-                    <td>21 Jun 2023</td>
-                    <td>PKR 10,000</td>
-                    <td></td>
-                  </tr>
-                  <tr className="tablerows secular-14px-upper">
-                    <td>Case ka title goes here</td>
-                    <td>Elementary School</td>
-                    <td>21 Jun 2023</td>
-                    <td>PKR 10,000</td>
-                    <td></td>
-                  </tr>
-                  <tr className="tablerows secular-14px-upper">
-                    <td>Case ka title goes here</td>
-                    <td>Elementary School</td>
-                    <td>21 Jun 2023</td>
-                    <td>PKR 10,000</td>
-                    <td></td>
-                  </tr>
+                  {history.map((item, index) => {
+                    const date = new Date(item.date);
+                    const formattedDate = date.toLocaleDateString("en-US", {
+                      day: "numeric",
+                      month: "short",
+                      year: "numeric",
+                    });
+                    item.date = formattedDate;
+
+                    return (
+                      <tr className="tablerows" key={index}>
+                        <td>{item.fname} {item.lname}</td>
+                        <td>{item.institution}</td>
+                        <td>{item.amount}</td>
+                        <td>{item.date}</td>
+                      </tr>
+                    );
+                  })}
                 </tbody>
               </table>
             </div>
