@@ -88,7 +88,7 @@ export const Addcases = () => {
           <div className=" flex flex-row w-full justify-between">
             <div className=" flex flex-col w-full mr-1">
               <p className=" lato-26-blue blue-text">Case Title</p>
-              <input
+              <input  style={{ color: "black" }}
                 id="pname"
                 placeholder="Enter Case Title"
                 className="input"
@@ -96,7 +96,7 @@ export const Addcases = () => {
             </div>
             <div className=" flex flex-col w-full ml-1">
               <p className=" lato-26-blue blue-text">Institution Name</p>
-              <input
+              <input  style={{ color: "black" }}
                 id="iname"
                 placeholder="Enter Insitution Name"
                 className="input"
@@ -106,7 +106,7 @@ export const Addcases = () => {
           <div className=" flex flex-row w-full justify-between">
             <div className=" flex flex-col w-full pt-5 mr-1">
               <p className=" lato-26-blue blue-text">Address</p>
-              <input
+              <input  style={{ color: "black" }}
                 id="address"
                 placeholder="Enter Address"
                 className="input"
@@ -114,7 +114,7 @@ export const Addcases = () => {
             </div>
             <div className=" flex flex-col w-full pt-5 ml-1">
               <p className=" lato-26-blue blue-text">Background Info</p>
-              <input
+              <input  style={{ color: "black" }}
                 id="desc"
                 placeholder="Enter Background Information"
                 className="input"
@@ -124,7 +124,7 @@ export const Addcases = () => {
           <div className=" flex flex-row w-full justify-between">
             <div className=" flex flex-col pt-5 w-full mr-1">
               <p className=" lato-26-blue blue-text">Province</p>
-              <input
+              <input  style={{ color: "black" }}
                 id="province"
                 placeholder="Enter Province"
                 className="input"
@@ -132,7 +132,7 @@ export const Addcases = () => {
             </div>
             <div className=" flex flex-col pt-5 w-full ml-1">
               <p className=" lato-26-blue blue-text">Amount</p>
-              <input
+              <input  style={{ color: "black" }}
                 id="amount"
                 placeholder="Enter Amount"
                 className="input"
@@ -168,7 +168,7 @@ export const Addcases = () => {
           <div className=" flex flex-col mt-4 justify-between">
             <div className=" flex flex-col justify-between">
               <p className=" lato-26-blue blue-text">Case Title</p>
-              <input
+              <input  style={{ color: "black" }}
                 id="pname"
                 placeholder="Enter Case Title"
                 className="input"
@@ -176,7 +176,7 @@ export const Addcases = () => {
             </div>
             <div className=" flex flex-col">
               <p className=" lato-26-blue blue-text pt-5">Institution Name</p>
-              <input
+              <input  style={{ color: "black" }}
                 id="iname"
                 placeholder="Enter Instituion Name"
                 className="input"
@@ -186,7 +186,7 @@ export const Addcases = () => {
           <div className=" flex flex-col justify-between">
             <div className=" flex flex-col pt-5">
               <p className=" lato-26-blue blue-text">Address</p>
-              <input
+              <input  style={{ color: "black" }}
                 id="address"
                 placeholder="Enter Address"
                 className="input"
@@ -194,7 +194,7 @@ export const Addcases = () => {
             </div>
             <div className=" flex flex-col pt-5">
               <p className=" lato-26-blue blue-text">Background Info</p>
-              <input
+              <input  style={{ color: "black" }}
                 id="desc"
                 placeholder="Enter Background Information"
                 className="input"
@@ -204,7 +204,7 @@ export const Addcases = () => {
           <div className=" flex flex-col justify-between">
             <div className=" flex flex-col pt-5">
               <p className=" lato-26-blue blue-text">Province</p>
-              <input
+              <input  style={{ color: "black" }}
                 id="province"
                 placeholder="Enter Province"
                 className="input"
@@ -212,7 +212,7 @@ export const Addcases = () => {
             </div>
             <div className=" flex flex-col pt-5">
               <p className=" lato-26-blue blue-text">Amount</p>
-              <input
+              <input  style={{ color: "black" }}
                 id="amount"
                 placeholder="Enter Amount"
                 className="input"
@@ -248,7 +248,7 @@ export const Addcases = () => {
           <div className=" flex flex-col mt-4 justify-between">
             <div className=" flex flex-col justify-between">
               <p className=" lato-26-blue blue-text">Case Title</p>
-              <input
+              <input  style={{ color: "black" }}
                 id="pname"
                 placeholder="Enter Case Title"
                 className="input"
@@ -256,7 +256,7 @@ export const Addcases = () => {
             </div>
             <div className=" flex flex-col">
               <p className=" lato-26-blue blue-text pt-5">Institution Name</p>
-              <input
+              <input  style={{ color: "black" }}
                 id="iname"
                 placeholder="Enter Institution Name"
                 className="input"
@@ -266,7 +266,7 @@ export const Addcases = () => {
           <div className=" flex flex-col justify-between">
             <div className=" flex flex-col pt-5">
               <p className=" lato-26-blue blue-text">Address</p>
-              <input
+              <input  style={{ color: "black" }}
                 id="address"
                 placeholder="Enter Address"
                 className="input"
@@ -274,7 +274,7 @@ export const Addcases = () => {
             </div>
             <div className=" flex flex-col pt-5">
               <p className=" lato-26-blue blue-text">Background Info</p>
-              <input
+              <input  style={{ color: "black" }}
                 id="desc"
                 placeholder="Enter Background Information"
                 className="input"
@@ -284,7 +284,7 @@ export const Addcases = () => {
           <div className=" flex flex-col justify-between">
             <div className=" flex flex-col pt-5">
               <p className=" lato-26-blue blue-text">Province</p>
-              <input
+              <input  style={{ color: "black" }}
                 id="province"
                 placeholder="Enter Province"
                 className="input"
@@ -292,7 +292,7 @@ export const Addcases = () => {
             </div>
             <div className=" flex flex-col pt-5">
               <p className=" lato-26-blue blue-text">Amount</p>
-              <input
+              <input  style={{ color: "black" }}
                 id="amount"
                 placeholder="Enter Account Number"
                 className="input"

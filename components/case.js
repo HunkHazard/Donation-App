@@ -5,10 +5,13 @@ import { useEffect, useState } from "react";
 
 const Cases = ({ text, required, collected, id }) => {
   const [check, setCheck] = useState(false);
+  const [width, setWidth] = useState("0%");
 
   useEffect(() => {
     if (localStorage.getItem("token")) {
       setCheck(true);
+      let width = parseInt( (collected / required) * 100);
+      setWidth(`${width}%`);
     }
   }, []);
 
@@ -37,7 +40,7 @@ const Cases = ({ text, required, collected, id }) => {
             if (data.error) {
               alert(data.error);
             } else {
-              alert(data.message);
+              // alert(data.message);
               window.location.href = "/usertransaction";
             }
           })
@@ -58,7 +61,7 @@ const Cases = ({ text, required, collected, id }) => {
             </div>
             <div className="flex flex-row pt-4 pb-4 secular-16px-upper blue-text float-left">
               <div className=" w-11/12 h-2 bg-white my-auto mr-6">
-                <div className=" w-7/12 h-2 main-accent my-auto mr-6"></div>
+                <div className=" w-7/12 h-2 main-accent my-auto mr-6" style={{width : width}}></div>
               </div>
               <p>{required}/-</p>
             </div>
@@ -92,7 +95,7 @@ const Cases = ({ text, required, collected, id }) => {
             </div>
             <div className="flex flex-row pt-4 pb-4 secular-16px-upper blue-text float-left">
               <div className=" w-11/12 h-2 bg-white my-auto mr-6">
-                <div className=" w-7/12 h-2 main-accent my-auto mr-6"></div>
+                <div className=" w-7/12 h-2 main-accent my-auto mr-6" style={{width : width}}></div>
               </div>
               <p>{required}/-</p>
             </div>
@@ -133,7 +136,7 @@ const Cases = ({ text, required, collected, id }) => {
           </div>
           <div className="flex flex-row pt-8 pb-8 secular-16px-upper blue-text float-left">
             <div className=" w-11/12 h-1 bg-white my-auto mr-6">
-              <div className=" w-7/12 h-1 main-accent my-auto mr-6"></div>
+              <div className=" w-7/12 h-1 main-accent my-auto mr-6" style={{width : width}}></div>
             </div>
             <p>{required}/-</p>
           </div>
@@ -173,7 +176,7 @@ const Cases = ({ text, required, collected, id }) => {
           </div>
           <div className="flex flex-row pt-8 pb-8 secular-16px-upper blue-text float-left">
             <div className=" w-11/12 h-1 bg-white my-auto mr-6">
-              <div className=" w-7/12 h-1 main-accent my-auto mr-6"></div>
+              <div className=" w-7/12 h-1 main-accent my-auto mr-6" style={{width : width}}></div>
             </div>
             <p>{required}/-</p>
           </div>

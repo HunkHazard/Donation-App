@@ -83,14 +83,6 @@ export const userdashboard = () => {
             <BurgerDropDown />
           </div>
         </div>
-        <select
-          name="timesort"
-          className="timesort cursor-pointer lato-16-blue"
-        >
-          <option>This Month</option>
-          <option>This Week</option>
-          <option>This Year</option>
-        </select>
         <div className=" flex flex-row mt-4 h-3/4 w-max">
           <div className=" flex flex-col h-full">
             <div className="donations mr-3 pr-3 md:flex hidden justify-between">

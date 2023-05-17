@@ -9,11 +9,6 @@ export const emptransaction = () => {
         <div className=" w-11/12 h-auto lg:flex hidden">
           <Sidebar></Sidebar>
           <div className=" statsdiv ml-10 w-11/12 h-auto overflow-y-scroll">
-            <select name="timesort" className="timesort">
-              <option>This Month</option>
-              <option>This Week</option>
-              <option>This Year</option>
-            </select>
             <div className="donationhistory mt-2 flex flex-col">
               <p className="lato-25-blue mt-2 ml-4">Transaction History</p>
               <table className="table ">

@@ -25,8 +25,8 @@ const Sidebar = ({ username }) => {
         <p className="line ml-2">{username}</p>
       </div>
       <Link
-        className={`link w-full ${isActiveLink("/userdashboard")}`}
-        href="/userdashboard"
+        className={`link w-full ${isActiveLink("/empdashboard")}`}
+        href="/empdashboard"
       >
         <div className="w-full rounded-full hover:bg-gray-600 flex flex-row justify-start p-[20px]">
           <img src="/apps.svg" alt="Graphic Elements" />
@@ -34,8 +34,8 @@ const Sidebar = ({ username }) => {
         </div>
       </Link>
       <Link
-        href="/usertransaction"
-        className={`link w-full ${isActiveLink("/usertransaction")}`}
+        href="/emptransaction"
+        className={`link w-full ${isActiveLink("/emptransaction")}`}
       >
         <div className="w-max rounded-full hover:bg-gray-600 flex flex-row justify-start p-[20px]">
           <img src="/coins.svg" alt="Graphic Elements" />
@@ -43,12 +43,12 @@ const Sidebar = ({ username }) => {
         </div>
       </Link>
       <Link
-        href="/transactionhistory"
+        href="/addcases"
         className={`link w-full ${isActiveLink("/transactionhistory")}`}
       >
         <div className="w-full rounded-full hover:bg-gray-600 flex flex-row justify-start p-[20px]">
           <img src="/search.svg" alt="Graphic Elements" />
-          <p className="lato-16-white ml-4">Explore Cases</p>
+          <p className="lato-16-white ml-4">Add Cases</p>
         </div>
       </Link>
       <Link href="/" className={`link w-full ${isActiveLink("/")}`}>
