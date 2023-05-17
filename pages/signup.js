@@ -8,14 +8,15 @@ export const signup = () => {
     function signup(event) {
         event.preventDefault();
         const payload = {
-            firstName: document.querySelector("#fname").value,
-            lastName: document.querySelector("#lname").value,
-            email: document.querySelector("#email").value,
-            phone: document.querySelector("#phone").value,
-            password: document.querySelector("#password").value,
-            city: document.querySelector("#city").value,
-            province: document.querySelector("#province").value,
+            FirstName: document.querySelector("#fname").value,
+            LastName: document.querySelector("#lname").value,
+            Email: document.querySelector("#email").value,
+            Phone: document.querySelector("#phone").value,
+            Password: document.querySelector("#password").value,
+            City: document.querySelector("#city").value,
+            Province: document.querySelector("#province").value,
         };
+        console.log(payload);
         async function fetchRes(payload) {
             const res = await fetch("http://localhost:3000/api/signup", {
                 method: "POST",
